@@ -21,7 +21,7 @@ class TrainingTrial{
  const open=(attempt-1)%4;
  this.mates=[{x:160,y:85},{x:340,y:85},{x:540,y:85},{x:730,y:85}];
  this.markers=this.mates.filter((_,i)=>i!==open).map(a=>({x:a.x+12,y:a.y+35}));
- this.defenders=[{x:440,y:170},{x:590,y:135}];if(kind==='vision'){const scenario=VISION_SCENARIOS[(attempt-1)%VISION_SCENARIOS.length];this.scenario=scenario.name;this.origin={...scenario.origin};this.mates=scenario.mates.map(p=>({...p}));this.markers=this.defenders=scenario.defenders.map(p=>({...p}));this.keeperPosition={x:440,y:55};this.opponents=[this.keeperPosition,...this.defenders];this.offsideLine=[...this.opponents].sort((a,b)=>a.y-b.y)[1].y;this.selectedReceiver=null;this.aim={...this.mates[0]};}
+ this.defenders=[{x:440,y:170},{x:590,y:135}];if(kind==='vision'){const scenario=VISION_SCENARIOS[(attempt-1)%VISION_SCENARIOS.length];this.scenario=scenario.name;this.origin={...scenario.origin};this.mates=scenario.mates.map(p=>({...p}));this.markers=this.defenders=scenario.defenders.map(p=>({...p}));this.keeperPosition={x:440,y:55};this.opponents=[this.keeperPosition,...this.defenders];this.offsideLine=[...this.opponents].sort((a,b)=>a.y-b.y)[1].y;this.selectedReceiver=null;this.aim={x:this.origin.x,y:this.origin.y-100};}
  }
  teammate(at=this.time){return{x:320+Math.sin(at*1.25)*150,y:85};}
  goalkeeper(at=this.time){return 440+Math.sin(at*1.8)*135;}

@@ -156,8 +156,14 @@ Verificação: `node tests/training-controls-browser.test.cjs` exercita toque, g
 
 Nas partidas, gols acionam uma sequência com rede, placar, nome do autor e seis comemorações 3D alternadas: aviãozinho, deslize de joelhos, soco no ar, salto com giro, coração para a torcida e abraço da equipe. O relógio e o gasto de stamina ficam pausados; Continuar encerra a sequência. Preferência por movimento reduzido é respeitada.
 
-O treino de visão tem cinco cenários com quatro recebedores, defensores, goleiro e linha do penúltimo adversário. Escolha um companheiro no campo, pelos botões ou teclas 1–4, e faça o passe puxando a bola para trás. O arrasto vertical define força e o componente lateral ajusta a direção. Não basta clicar no companheiro: é preciso completar o passe.
+O treino de visão tem cinco cenários com quatro recebedores, defensores, goleiro e linha do penúltimo adversário. Na v0.6.1, use o arrasto livre no campo, conforme os controles abaixo.
 
 A posição de impedimento é registrada no instante do passe. O recebedor precisa estar no campo adversário e à frente tanto da bola quanto do penúltimo adversário; alinhamento é legal e o goleiro conta como adversário. Nos passes simulados, a infração de recepção é aplicada quando o jogador recebe a bola; interceptações não geram impedimento de quem não participou. A regra também se aplica aos passes nas partidas. Recepção direta de escanteio é isenta.
 
 Testes adicionais: `node tests/vision-offside.test.cjs`, `node tests/vision-browser.test.cjs`, `node tests/celebrations-browser.test.cjs` (os testes de navegador aceitam `GAME_URL`).
+
+## Mira livre no treino de visão — v0.6.1
+
+Segure em qualquer ponto do campo e arraste no sentido contrário ao passe. A direção e o comprimento do arrasto definem a mira e a potência, limitadas pela força do jogador. A trajetória e o medidor são atualizados enquanto segura; solte para passar. Não há seleção automática de companheiro, botões numerados ou janela de chute nesse treino. É possível passar para espaços vazios e errar; recepção, interceptação e impedimento dependem do destino real da bola. O tempo fica pausado durante a preparação.
+
+Validação por toque: `GAME_URL=http://127.0.0.1:8011/ node tests/vision-browser.test.cjs`.
