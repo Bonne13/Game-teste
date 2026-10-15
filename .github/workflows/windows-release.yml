@@ -20,7 +20,7 @@ jobs:
       - name: Testar regras do jogo
         shell: pwsh
         run: |
-          $tests = @('economy', 'leagues', 'training', 'match', 'match-rules', 'recovery', 'timeline', 'world', 'drag')
+          $tests = @('economy', 'leagues', 'training', 'match', 'match-rules', 'recovery', 'timeline', 'world', 'drag', 'match-input')
           foreach ($test in $tests) {
             node "tests/$test.test.cjs"
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

@@ -10,24 +10,23 @@ Não precisa instalar Python, Node.js ou Go para jogar. Os arquivos estão incor
 
 Protótipo independente de futebol e carreira para PC, inspirado na experiência de oportunidades e progressão de New Star Soccer e Football Legacy, com nome, interface e modelos próprios. Esta versão traz campos e jogadores em **3D real com Three.js/WebGL**, câmera atrás da bola, gol com rede, goleiro, iluminação e sombras. As animações são simples; não é uma partida completa de onze contra onze.
 
-## Atualização visual e de jogabilidade — 0.3.0
+## Atualização de campo e controles — 0.4.0
 
-![Campo 3D em fim de tarde, câmera próxima da bola](docs/campo-3d-v03.png)
+![Novo campo 3D com câmera baixa e áreas em proporções naturais](docs/campo-3d-v04.png)
 
-- Gramado com textura procedural, faixas de corte, marcações, bandeirinhas, arquibancadas com cobertura, torcida e refletores.
-- Câmeras perto da bola, aberta e lateral, com acompanhamento suave. Iluminação de dia, fim de tarde ou noite.
-- Qualidade Leve, Equilibrada ou Alta. O modo leve reduz resolução e desliga sombras e torcida. Preferências ficam salvas; a trajetória de mira pode ser ocultada.
-- Jogadores articulados, movimentos de corrida e chute, mergulho do goleiro e rede que reage ao gol.
-- Finalizações Normal, Colocada, Potente e Cavadinha, com diferenças reais na velocidade, curva e arco. O seletor mostra a potência de referência de cada uma. A força do jogador continua limitando a potência máxima.
-- Indicações de gol, defesa, trave, barreira e erro de contato. Um clique sem arrastar não dispara o chute. O resultado permanece brevemente em campo para mostrar o desfecho da bola.
+- Campo completo de 105 × 68 metros na cena, áreas e marcações em escala, dois gols e arquibancadas com assentos e espectadores modelados.
+- Câmera mais baixa e perspectiva mais natural, acompanhando o lance e ficando estável enquanto você carrega o chute. Jogadores com mangas, gola e proporções refinadas.
+- **Arrastar para trás é exclusivo dos treinos.** Nas partidas, mire no campo, segure o mouse para carregar a força e solte para executar. A carga depende do tempo e da força do jogador, sem depender da distância de arrasto.
+- A bola ampliada nas partidas serve para escolher o ponto de contato, altura e curva. Clicar nela não dispara o chute. Também é possível mirar no campo e carregar pelo botão **Segure para carregar**.
+- Três câmeras, luz de dia/fim de tarde/noite, qualidade Leve/Equilibrada/Alta, quatro estilos de finalização e animações de jogadores, goleiro e rede.
 
-As opções ficam em **Imagem e câmera**, abaixo do menu principal. Os gráficos e as animações continuam estilizados, com física simplificada para o protótipo.
+As opções ficam em **Imagem e câmera**, abaixo do menu principal. Os gráficos continuam estilizados e a física é simplificada para este protótipo.
 
 ## Controles em 3D
 
 No menu **Treinos**, complete chute, visão, passe, velocidade, técnica e tiro livre. Cada sessão tem cinco tentativas. A média histórica dos seis fundamentos define automaticamente seu clube na liga de preferência, sem influência de dinheiro, reputação ou chuteiras.
 
-Para chutar ou passar, clique na bola 3D ampliada abaixo do campo, segure o mouse, arraste para trás e solte. A direção do arrasto define a mira; sua distância define a potência, limitada pela força do jogador. Clicar mais embaixo da bola aumenta a altura. Clicar nas laterais produz curva. A linha no campo antecipa a trajetória enquanto você prepara o chute. Também é possível iniciar o gesto na bola do próprio campo.
+**Somente nos treinos de chute, passe e tiro livre:** clique na bola 3D ampliada abaixo do campo, segure o mouse, arraste para trás e solte. A direção do arrasto define a mira; sua distância define a potência, limitada pela força do jogador. Clicar mais embaixo da bola aumenta a altura. Clicar nas laterais produz curva. A linha no campo antecipa a trajetória enquanto você prepara o chute. Também é possível iniciar o gesto na bola do próprio campo.
 
 | Treino | Como jogar |
 | --- | --- |
@@ -37,6 +36,8 @@ Para chutar ou passar, clique na bola 3D ampliada abaixo do campo, segure o mous
 | Velocidade | Alterne A/D ou os botões dos pés, com ritmo de 0,22–0,55 segundo. |
 | Técnica | Clique no gramado para conduzir, ou use WASD/setas; atravesse os portões evitando cones. |
 | Tiro livre | Use o ponto de contato na bola para contornar a barreira com curva e altura. |
+
+**Nas partidas:** mire no destino dentro do campo 3D, segure o botão esquerdo do mouse para carregar e solte para executar. Para passes e escanteios, mire no gramado; para chutes, mire no gol. A força depende do tempo segurando e do atributo do jogador. A bola ampliada permite escolher o efeito por clique, sem exigir arrastar.
 
 Em **Jogar**, as chances alternam chute, passe, pênalti, falta, escanteio, cabeceio, voleio e bicicleta. O seletor de jogada permite experimentar as situações. Cabeceio, voleio e bicicleta exigem soltar o mouse na faixa verde do indicador de contato. Passe e escanteio recebidos continuam na mesma chance; a assistência e o gol pertencem aos jogadores envolvidos. Para comandar um companheiro, escolha sua camisa, ative **Movimentar companheiro** e clique no destino no gramado. Desative para voltar a chutar.
 
@@ -90,6 +91,7 @@ node tests/recovery.test.cjs
 node tests/timeline.test.cjs
 node tests/world.test.cjs
 node tests/drag.test.cjs
+node tests/match-input.test.cjs
 ```
 
 Os testes opcionais `tests/browser.test.cjs` e `tests/match-browser.test.cjs` e `tests/visual-browser.test.cjs` usam Playwright, Chromium com WebGL e o servidor na porta 8000. Verificam gestos reais do mouse, interfaces de treino, recrutamento, elencos, partida, loja no intervalo, recuperação, salário e persistência após promoção.
@@ -102,4 +104,4 @@ python tools/build-desktop.py
 
 O script incorpora os arquivos públicos, testa o servidor e gera EXE/ZIP em `dist/`. `GO_BINARY` permite indicar o compilador. O workflow **Publicar jogo para Windows** também compila no GitHub Actions; tags `v*` publicam uma Release. O ZIP em `downloads/` permite baixar sem esperar a automação.
 
-`football-presentation.js` contém estádio, qualidade gráfica, câmeras e animações; `football-3d.js` integra as cenas e os controles; `training-engine.js` e `match-engine.js`, as regras de jogadas; `career-economy.js`, economia; `league-world.js`, promoções; `season-awards.js`, estatísticas e prêmios. `club-database.js` é o snapshot offline, gerado por `tools/import-football-data.py`. Three.js está em `vendor/`, com sua licença MIT. Nomes factuais de clubes e jogadores são acompanhados de suas fontes; modelos, marcas comerciais da loja e apresentação foram criados para o protótipo.
+`match-input.js` separa a carga por tempo das partidas do arrasto dos treinos; `football-presentation.js` contém estádio, qualidade gráfica, câmeras e animações; `football-3d.js` integra as cenas e os controles; `training-engine.js` e `match-engine.js`, as regras de jogadas; `career-economy.js`, economia; `league-world.js`, promoções; `season-awards.js`, estatísticas e prêmios. `club-database.js` é o snapshot offline, gerado por `tools/import-football-data.py`. Three.js está em `vendor/`, com sua licença MIT. Nomes factuais de clubes e jogadores são acompanhados de suas fontes; modelos, marcas comerciais da loja e apresentação foram criados para o protótipo.
