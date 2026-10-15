@@ -151,3 +151,13 @@ No treino, toque na bola para selecionar o efeito. Depois segure e arraste para 
 A câmera acompanha o lance e aproxima o destino. A bola fica acima do gramado inclusive nos chutes fracos. Gol termina dentro da rede; defesa para antes da linha; barreira e interceptação param a trajetória no contato. Um marcador Bola aqui e uma legenda de resultado permanecem visíveis até a próxima tentativa.
 
 Verificação: `node tests/training-controls-browser.test.cjs` exercita toque, gesto e destino; `node tests/training-destinations-browser.test.cjs` cobre gol, defesa, barreira, chute curto, direita, esquerda e acima do travessão. Use `GAME_URL` para apontar ao servidor local.
+
+## Gols, comemorações e treino de visão — v0.6.0
+
+Nas partidas, gols acionam uma sequência com rede, placar, nome do autor e seis comemorações 3D alternadas: aviãozinho, deslize de joelhos, soco no ar, salto com giro, coração para a torcida e abraço da equipe. O relógio e o gasto de stamina ficam pausados; Continuar encerra a sequência. Preferência por movimento reduzido é respeitada.
+
+O treino de visão tem cinco cenários com quatro recebedores, defensores, goleiro e linha do penúltimo adversário. Escolha um companheiro no campo, pelos botões ou teclas 1–4, e faça o passe puxando a bola para trás. O arrasto vertical define força e o componente lateral ajusta a direção. Não basta clicar no companheiro: é preciso completar o passe.
+
+A posição de impedimento é registrada no instante do passe. O recebedor precisa estar no campo adversário e à frente tanto da bola quanto do penúltimo adversário; alinhamento é legal e o goleiro conta como adversário. Nos passes simulados, a infração de recepção é aplicada quando o jogador recebe a bola; interceptações não geram impedimento de quem não participou. A regra também se aplica aos passes nas partidas. Recepção direta de escanteio é isenta.
+
+Testes adicionais: `node tests/vision-offside.test.cjs`, `node tests/vision-browser.test.cjs`, `node tests/celebrations-browser.test.cjs` (os testes de navegador aceitam `GAME_URL`).

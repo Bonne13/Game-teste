@@ -10,7 +10,7 @@ const curve=new TrainingTrial('freekick');curve.aim={...curve.target};curve.curv
 // Passe deve antecipar a posição do companheiro no instante da chegada.
 const pass=new TrainingTrial('pass');advance(pass,2);pass.aim=pass.teammate(2.85);pass.release(.55);advance(pass,1);assert(pass.score>=98,pass.message);
 const interception=new TrainingTrial('pass');interception.aim={x:440,y:80};interception.release(.55);advance(interception,1);assert.equal(interception.score,0);assert.match(interception.message,/interceptado/);
-for(let attempt=1;attempt<=5;attempt++){const vision=new TrainingTrial('vision',attempt);vision.choose((attempt-1)%4);assert.equal(vision.score,100);const wrong=new TrainingTrial('vision',attempt);wrong.choose(attempt%4);assert.equal(wrong.score,0);}
+for(let attempt=1;attempt<=5;attempt++){const vision=new TrainingTrial('vision',attempt);assert(vision.choose([0,0,1,1,3][attempt-1]));assert(!vision.resolved);vision.release(.55);advance(vision,1);assert(vision.score>80,vision.message);}
 const sprint=new TrainingTrial('speed');for(let i=0;i<16;i++){sprint.step(i%2?'d':'a');if(!sprint.resolved)advance(sprint,.3);}assert(sprint.resolved);assert(sprint.score>80);
 const spam=new TrainingTrial('speed');for(let i=0;i<16;i++)spam.step('a');advance(spam,9);assert(spam.score<sprint.score);
 const dribble=new TrainingTrial('technique');advance(dribble,.5,{ArrowRight:true});assert(dribble.player.x>75);assert.equal(dribble.gate,0);

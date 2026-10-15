@@ -1,7 +1,7 @@
 const {chromium}=require('playwright'),assert=require('node:assert/strict');
 (async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});try{
  const context=await browser.newContext({viewport:{width:393,height:851},deviceScaleFactor:2,isMobile:true,hasTouch:true}),page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));const cdp=await context.newCDPSession(page);
- await require('./game-page.cjs')(page);await page.goto(process.env.GAME_URL||'http://127.0.0.1:8011/');await page.locator('#buildVersion').waitFor();assert.match(await page.locator('#buildVersion').innerText(),/0.5.2/);
+ await require('./game-page.cjs')(page);await page.goto(process.env.GAME_URL||'http://127.0.0.1:8011/');await page.locator('#buildVersion').waitFor();assert.match(await page.locator('#buildVersion').innerText(),/0.6.0/);
  for(const [index,kind] of [[0,'shoot'],[2,'pass'],[5,'freekick']]){
   await page.locator('#drillButtons button').nth(index).tap();
   for(let attempt=0;attempt<5;attempt++){
