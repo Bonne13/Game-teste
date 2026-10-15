@@ -8,7 +8,7 @@
 
 Não é necessário pagar, ter conta Google Play ou publicar na loja para este teste por APK. O aplicativo inclui o jogo, funciona sem internet e não pede acesso a arquivos, localização, câmera ou microfone. O APK é universal, para Android 8.0 ou posterior, com Android System WebView atualizado e suporte gráfico WebGL. Os gráficos dependem do aparelho; em **Imagem e câmera**, escolha **Leve** se necessário.
 
-Nos treinos de chute, passe e falta, toque na bola, segure e arraste para trás. Nas partidas, toque no destino no campo, mantenha o dedo pressionado para carregar a força e solte. A bola ampliada da partida serve apenas para escolher o efeito. Visão, corrida e técnica oferecem botões na tela. Há um painel compacto de stamina, overall e dinheiro, com opção de nome e descanso. A tela pode ser usada deitada ou em pé.
+Nos treinos de chute, passe e falta, toque na bola, segure e arraste para trás. Nas partidas, toque no destino no campo e solte para confirmar a mira. A jogada pausa e abre a bola ampliada. Só então toque no ponto da bola, segure para carregar e solte para chutar. O botão Voltar e ajustar a mira cancela a preparação sem consumir a chance. Visão, corrida e técnica oferecem botões na tela. Há um painel compacto de stamina, overall e dinheiro, com opção de nome e descanso. A tela pode ser usada deitada ou em pé.
 
 A carreira fica nos dados locais do aplicativo. Desinstalar ou limpar seus dados apaga esse progresso. Uma partida em andamento não é retomada ao fechar o aplicativo. O progresso do APK é separado do navegador e da versão Windows.
 

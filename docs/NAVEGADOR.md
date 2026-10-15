@@ -4,7 +4,7 @@ A versão web usa os mesmos controles por toque do APK e não exige instalar exe
 
 **Endereço previsto após publicar o GitHub Pages:** https://bonne13.github.io/Game-teste/
 
-Abra no Safari do iPhone ou no Chrome do Android. No treino de chute, passe e falta, toque na bola e arraste para trás. Na partida, mire no campo, mantenha o dedo pressionado para carregar a força e solte. O nome e a carreira ficam nesse navegador; não são sincronizados com o APK ou com o PC.
+Abra no Safari do iPhone ou no Chrome do Android. No treino de chute, passe e falta, toque na bola e arraste para trás. Na partida, toque no campo para confirmar a mira e solte. Com a jogada pausada, aparece a bola ampliada; toque nela, segure para carregar e solte para chutar. O nome e a carreira ficam nesse navegador; não são sincronizados com o APK ou com o PC.
 
 Após o primeiro carregamento completo, os arquivos ficam disponíveis offline quando o navegador permite service workers. No iPhone, é possível usar **Compartilhar → Adicionar à Tela de Início**. No Android, use **Adicionar à tela inicial/Instalar app**, quando oferecido pelo navegador. Limpar os dados desse site remove a carreira e o cache. Uma partida em andamento não é retomada ao recarregar.
 
