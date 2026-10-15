@@ -1,7 +1,7 @@
 const {chromium}=require('playwright'),assert=require('node:assert/strict');
 (async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});try{
  const page=await browser.newPage({viewport:{width:393,height:851},isMobile:true,hasTouch:true}),errors=[];page.on('pageerror',e=>errors.push(e.message));await require('./game-page.cjs')(page);await page.goto(process.env.GAME_URL||'http://127.0.0.1:8011/');await page.locator('#drillButtons button').nth(1).tap();const client=await page.context().newCDPSession(page),scenarios=[];
- assert.equal(await page.locator('#visionChoices button').count(),0);assert(!await page.locator('#chargeBall').isVisible());
+ assert.equal(await page.locator('#visionChoices button').count(),0);assert.match(await page.locator('#chargeBall').innerText(),/Efeito/);
  await page.locator('#trainingCanvas').tap();await page.locator('#trainingCanvas').press('1');assert(!await page.locator('#trainingShotDialog').isVisible());assert(!await page.locator('#nextAttempt').isVisible());
  for(let i=0;i<5;i++){
   await page.locator('#trainingCanvas').scrollIntoViewIfNeeded();await page.waitForTimeout(200);

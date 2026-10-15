@@ -167,3 +167,11 @@ Testes adicionais: `node tests/vision-offside.test.cjs`, `node tests/vision-brow
 Segure em qualquer ponto do campo e arraste no sentido contrário ao passe. A direção e o comprimento do arrasto definem a mira e a potência, limitadas pela força do jogador. A trajetória e o medidor são atualizados enquanto segura; solte para passar. Não há seleção automática de companheiro, botões numerados ou janela de chute nesse treino. É possível passar para espaços vazios e errar; recepção, interceptação e impedimento dependem do destino real da bola. O tempo fica pausado durante a preparação.
 
 Validação por toque: `GAME_URL=http://127.0.0.1:8011/ node tests/vision-browser.test.cjs`.
+
+## Arrasto livre em todas as finalizações — v0.7.0
+
+Chutes, passes, visão e faltas no treino, além de chute, passe, pênalti, falta, escanteio, cabeceio, voleio e bicicleta na partida usam o arrasto no próprio campo. Segure em qualquer ponto e puxe no sentido contrário à jogada; distância define potência, ângulo define direção. A linha pontilhada acompanha os ajustes antes de soltar. Não há alvo fixo no gol nem seleção automática de recebedor. Gols no treino livre recebem nota pela finalização, sem exigir um ponto oculto.
+
+O botão **Efeito da bola · opcional** mostra a bola 3D abaixo do campo para escolher altura/curva, sem disparar. A execução continua sendo pelo arrasto no campo. Cabeceio, voleio e bicicleta mantêm a janela de tempo de contato; as outras jogadas pausam durante o arrasto.
+
+Verificação atual dos controles: `node tests/match-input.test.cjs`, `node tests/free-drag-browser.test.cjs` e `node tests/vision-browser.test.cjs` (navegador aceita `GAME_URL`). Os testes antigos da janela obrigatória de preparação descrevem o controle anterior.

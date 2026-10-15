@@ -1,15 +1,12 @@
-const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');let now=0;const listeners={};
-const ctx=vm.createContext({performance:{now:()=>now},window:{addEventListener:(n,f)=>listeners[n]=f},document:{addEventListener:(n,f)=>listeners[n]=f}});vm.runInContext(fs.readFileSync('match-input.js','utf8')+';globalThis.api={wireMatchShot,heldShotPower};',ctx);
-assert.equal(ctx.api.heldShotPower(0,80),0);assert(Math.abs(ctx.api.heldShotPower(625,80)-.48)<1e-12);assert.equal(ctx.api.heldShotPower(5000,100),1);
-const element=()=>({setPointerCapture(){}}),field=element(),button=element(),ball=element(),shots=[];let ready=true,mode='shoot',positioning=false,aim=null,context={};
-const view={canvas:field,contactCanvas:ball,contact:{x:.2,y:-.3},goalAt:e=>({x:e.clientX,y:e.clientY}),groundAt:e=>({x:e.clientX,y:e.clientY,ground:true}),setContactFromPointer(){return true;},showShotPreparation(v){this.dialogOpen=v;}};
-ctx.api.wireMatchShot(view,{button,context:()=>context,ready:()=>ready,mode:()=>mode,strength:()=>80,aim:v=>aim=v,change(){},release:v=>shots.push(v),onFieldDown:()=>positioning});
-const event=(source,id=1)=>({currentTarget:source,pointerId:id,button:0,clientX:310,clientY:100,preventDefault(){}});
-field.onpointerdown(event(field));now+=2000;view.updateCharge();field.onpointerup(event(field));assert.equal(shots.length,0,'Soltar a mira nunca deve chutar, mesmo depois de segurar.');assert(view.dialogOpen);assert(view.isShotPreparationPaused());assert.equal(view.shotPhase,'contact');
-ball.onpointerup(event(ball));assert.equal(shots.length,0,'A soltura da mira não pode passar para a bola.');
-const selected=aim;field.onpointermove({...event(field),clientX:800});assert.equal(aim,selected,'Mira travada durante a preparação.');ball.onpointerdown(event(ball));now+=625;view.updateCharge();assert(view.isShotPreparationPaused());ball.onpointerup(event(ball));assert.equal(shots.length,1);assert(Math.abs(shots[0].power-.48)<1e-12);assert(!view.dialogOpen);assert(!view.isShotPreparationPaused());
-view.resetShotInput();button.onclick();assert(view.dialogOpen);ball.onpointerdown(event(ball));now+=500;listeners.blur();ball.onpointerup(event(ball));assert.equal(shots.length,1);assert.equal(view.shotPhase,'contact','Perda de foco cancela a carga e mantém a preparação.');
-view.resetShotInput();assert(!view.dialogOpen);mode='pass';field.onpointerdown(event(field));field.onpointerup(event(field));assert(aim.ground);assert(view.isShotPreparationPaused());
-mode='header';view.updateCharge();assert.equal(view.shotPhase,'aim');field.onpointerdown(event(field));field.onpointerup(event(field));assert(view.isShotPreparationPaused());ball.onpointerdown(event(ball));assert(!view.isShotPreparationPaused(),'A janela aérea corre somente após começar a carga.');ball.onpointercancel(event(ball));assert(view.isShotPreparationPaused());assert.equal(shots.length,1);
-view.resetShotInput();positioning=true;field.onpointerdown(event(field));field.onpointerup(event(field));assert(!view.dialogOpen);positioning=false;ready=false;button.onclick();assert(!view.dialogOpen);ready=true;context={};view.updateCharge();assert.equal(view.shotPhase,'aim');
-console.log('PASS: mira sem chute, gesto independente na bola, pausa, mira travada, força, voltar, cancelamento, passe e retomada de contato aéreo.');
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),listeners={};
+const ctx=vm.createContext({window:{addEventListener:(n,f)=>listeners[n]=f},document:{addEventListener:(n,f)=>listeners[n]=f}});
+vm.runInContext(fs.readFileSync('football-3d.js','utf8')+'\n'+fs.readFileSync('match-input.js','utf8')+';globalThis.wire=wireMatchShot;',ctx);
+const field={clientHeight:300,setPointerCapture(){}},shots=[];let ready=true,mode='shoot',context={},positioning=false,preview;
+const view={canvas:field,contact:{x:0,y:0},rect:()=>({bottom:184,top:69}),setAimPoint(p){this.aim=p;}};
+ctx.wire(view,{ready:()=>ready,context:()=>context,mode:()=>mode,origin:()=>({x:440,y:390}),strength:()=>80,change:s=>preview=s,release:s=>shots.push(s),onFieldDown:()=>positioning});
+const e=(x=100,y=100)=>({button:0,pointerId:1,clientX:x,clientY:y,preventDefault(){}});
+for(mode of ['shoot','pass','penalty','freekick','corner','header','volley','bicycle']){
+ view.updateCharge();field.onpointerdown(e());assert.equal(preview.power,0);view.updateCharge();assert.equal(preview.power,0,'Holding alone cannot add power');field.onpointermove(e(120,150));const weak=preview.power;field.onpointermove(e(80,190));assert(preview.power>weak);assert(preview.end.x>440);assert.equal(view.isShotPreparationPaused(),!['header','volley','bicycle'].includes(mode));field.onpointerup(e(80,190));assert.equal(shots.length,['shoot','pass','penalty','freekick','corner','header','volley','bicycle'].indexOf(mode)+1);
+}
+field.onpointerdown(e());listeners.blur();field.onpointerup(e(100,200));assert.equal(shots.length,8);field.onpointerdown(e());field.onpointerup(e());assert.equal(shots.length,8);positioning=true;field.onpointerdown(e());field.onpointerup(e(100,200));assert.equal(shots.length,8);positioning=false;field.onpointerdown(e());ready=false;view.updateCharge();field.onpointerup(e(100,200));assert.equal(shots.length,8);
+console.log('PASS: oito jogadas com arrasto livre, força por distância, pausa, direção, toque sem disparo, cancelamento e posicionamento.');
