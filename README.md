@@ -8,7 +8,7 @@ Versão web preparada para Safari/iPhone e Chrome/Android, com controles por toq
 
 A publicação usa GitHub Pages. A ativação e a disponibilidade pública ainda precisam ser confirmadas na sua conta; veja [como ativar e jogar](docs/NAVEGADOR.md).
 
-## Testar no Android, sem pagar
+## Testar no Android
 
 **[Baixar APK de teste para Android](https://github.com/Bonne13/Game-teste/blob/main/downloads/ProximaEstrela-Android-teste.apk)** — abra o link no celular, toque em **Download raw**, abra o arquivo e autorize a instalação pelo navegador se o Android solicitar. Não precisa de conta Google Play.
 
