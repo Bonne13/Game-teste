@@ -42,7 +42,7 @@ As opções ficam em **Imagem e câmera**, abaixo do menu principal. Os gráfico
 
 No menu **Treinos**, complete chute, visão, passe, velocidade, técnica e tiro livre. Cada sessão tem cinco tentativas. A média histórica dos seis fundamentos define automaticamente seu clube na liga de preferência, sem influência de dinheiro, reputação ou chuteiras.
 
-**Somente nos treinos de chute, passe e tiro livre:** clique na bola 3D ampliada abaixo do campo, segure o mouse, arraste para trás e solte. A direção do arrasto define a mira; sua distância define a potência, limitada pela força do jogador. Clicar mais embaixo da bola aumenta a altura. Clicar nas laterais produz curva. A linha no campo antecipa a trajetória enquanto você prepara o chute. Também é possível iniciar o gesto na bola do próprio campo.
+**Nos treinos de chute, passe e tiro livre:** primeiro toque no campo para definir a mira e solte. O treino pausa e abre a bola 3D. Em um novo toque, escolha o ponto da bola, segure, arraste para trás e solte para executar. A distância do arrasto define a potência, limitada pela força do jogador. Embaixo aumenta a altura; nas laterais produz curva. Use Voltar para corrigir a mira sem gastar a tentativa.
 
 | Treino | Como jogar |
 | --- | --- |
@@ -121,3 +121,5 @@ python tools/build-desktop.py
 O script incorpora os arquivos públicos, testa o servidor e gera EXE/ZIP em `dist/`. `GO_BINARY` permite indicar o compilador. O workflow **Publicar jogo para Windows** também compila no GitHub Actions; tags `v*` publicam uma Release. O ZIP em `downloads/` permite baixar sem esperar a automação.
 
 `match-input.js` separa a carga por tempo das partidas do arrasto dos treinos; `football-presentation.js` contém estádio, qualidade gráfica, câmeras e animações; `football-3d.js` integra as cenas e os controles; `training-engine.js` e `match-engine.js`, as regras de jogadas; `career-economy.js`, economia; `league-world.js`, promoções; `season-awards.js`, estatísticas e prêmios. `club-database.js` é o snapshot offline, gerado por `tools/import-football-data.py`. Three.js está em `vendor/`, com sua licença MIT. Nomes factuais de clubes e jogadores são acompanhados de suas fontes; modelos, marcas comerciais da loja e apresentação foram criados para o protótipo.
+
+Atualização do navegador v0.4.3: se uma aba manteve controles antigos, depois da publicação abra `https://bonne13.github.io/Game-teste/?atualizar=mira-pausada`. O worker atualizado recarrega somente a aba que pediu recuperação e preserva o armazenamento da carreira. As demais abas não são recarregadas automaticamente.

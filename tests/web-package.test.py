@@ -14,7 +14,8 @@ urls=json.loads(re.search(r'const FILES=(\[.*?\]);',worker).group(1))
 for url in urls:
     assert url=='./' or (site/url.removeprefix('./')).is_file(),url
 assert "new URL('./',self.location.href)" in worker
-assert 'skipWaiting' not in worker,'Uma atualização não deve interromper uma partida.'
+assert 'skipWaiting' in worker
+assert "url.searchParams.get('atualizar')==='mira-pausada'" in worker,'Só recarrega a aba que pediu atualização explícita.'
 for file in site.rglob('*'):
     assert file.suffix not in {'.apk','.exe','.zip','.keystore','.jks','.p8','.p12'},file
 assert not (site/'.git').exists()
