@@ -1,0 +1,19 @@
+/* Shared touch layout used by the Android app and mobile browsers. */
+#mobileHUD{display:none}
+@media(max-width:850px){
+ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+ body{overscroll-behavior-y:none}
+ .shell{padding: max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+ header{padding-bottom:12px;gap:8px}.brand{font-size:21px}header>.sub{font-size:10px}
+ .layout{margin-top:14px;gap:0}main{min-width:0}.hero{padding:0 0 16px}.hero h1{font-size:36px}.hero .eyebrow{font-size:9px}.round{padding:9px;max-width:135px}
+ #mobileHUD{display:block;margin-top:12px;padding:12px 14px;border-radius:10px;border:1px solid #344b3e;background:#17271f;font-size:12px}
+ #mobileHUD .mobile-stats{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}.mobile-stats strong{color:var(--lime)}#mobileClub{font-weight:700;margin:0 0 9px}#mobileHUD details{margin-top:10px}#mobileHUD input{font-size:16px;max-width:250px}#mobileHUD .btn{margin-left:8px}
+ #mainNavigation{top:max(6px,env(safe-area-inset-top));overflow-x:auto;margin-bottom:14px}.nav-button{min-height:44px;flex:1 0 auto;padding:10px 9px}
+ .btn,select{min-height:44px}input,select{font-size:16px}button{-webkit-tap-highlight-color:transparent}.card{padding:14px}h2{font-size:26px}h3{font-size:22px}
+ .matchhead{gap:10px}.score{font-size:19px;max-width:60%}.match-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px}.match-controls label{min-width:0}.match-controls>.btn{grid-column:1/-1}
+ #pitch,#trainingCanvas{height:clamp(235px,44svh,420px);width:100%}.instruction{white-space:normal;text-align:center;width:max-content;max-width:92%;bottom:10px;padding:9px 12px;line-height:1.5;font-size:10px}
+ .contact-control{padding:10px;gap:10px;flex-wrap:nowrap}.contact-ball{width:145px;height:145px;flex:0 0 145px}.contact-control p{font-size:11px;line-height:1.6;margin:0}.match-actions{gap:10px}#matchCharge{width:100%;font-size:13px;min-height:50px}.matchfooter{flex-wrap:wrap}.matchfooter>.btn{width:100%}
+ .visual-options label{min-width:130px}.training-hud{flex-wrap:wrap}.training-actions{gap:10px}#dribbleControls button,#sprintControls button,#visionChoices button{min-width:48px;min-height:48px;margin:3px}#drillButtons{gap:9px}#drillButtons .btn{flex:1 0 28%}
+ .shop-grid,.award-grid{grid-template-columns:1fr}.category-tabs .btn{flex:1 0 auto}dialog{padding:14px;max-height:90svh}.dialog-header h2{font-size:22px}.bottom{gap:12px}footer{gap:12px;line-height:1.5;font-size:10px}
+}
+@media(max-width:850px) and (orientation:landscape){.hero{display:none}#mobileHUD{margin-top:8px}#mobileHUD details{display:none}#pitch,#trainingCanvas{height:68svh;min-height:230px}.contact-control p{max-width:none}header>.sub{display:none}}

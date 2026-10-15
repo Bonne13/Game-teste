@@ -1,5 +1,13 @@
 # Próxima Estrela
 
+## Testar no Android, sem pagar
+
+**[Baixar APK de teste para Android](https://github.com/Bonne13/Game-teste/blob/main/downloads/ProximaEstrela-Android-teste.apk)** — abra o link no celular, toque em **Download raw**, abra o arquivo e autorize a instalação pelo navegador se o Android solicitar. Não precisa de conta Google Play.
+
+Inclui jogo offline e controles por toque. Android 8.0 ou posterior, com WebView atualizado e WebGL. Veja [como instalar, controles e compilação](docs/ANDROID.md). O APK ainda precisa ser testado num aparelho físico; os controles foram exercitados em Chromium com toque.
+
+## Jogar no Windows
+
 **[Baixar o jogo para Windows 10/11 de 64 bits](https://github.com/Bonne13/Game-teste/raw/refs/heads/main/downloads/ProximaEstrela-Windows-x64.zip)**
 
 1. Baixe o ZIP e extraia os arquivos.

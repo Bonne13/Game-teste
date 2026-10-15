@@ -6,7 +6,7 @@ assets=root/'desktop/assets'
 assets.mkdir(parents=True,exist_ok=True)
 for file in assets.iterdir():
  if file.is_file():file.unlink()
-for file in [root/'index.html',*root.glob('*.js'),*root.glob('*.json')]:
+for file in [root/'index.html',*root.glob('*.js'),*root.glob('*.css'),*root.glob('*.json')]:
  if file.name not in ['package.json','package-lock.json']:shutil.copy2(file,assets/file.name)
 for directory in ['data','vendor']:
  if (root/directory).is_dir():shutil.copytree(root/directory,assets/directory,dirs_exist_ok=True)
