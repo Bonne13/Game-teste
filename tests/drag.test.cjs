@@ -1,0 +1,14 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const ctx=vm.createContext({careerBound:(n,min=0,max=1)=>Math.max(min,Math.min(max,n))});
+vm.runInContext(fs.readFileSync('football-3d.js','utf8')+';globalThis.View=Football3D;',ctx);
+const view=Object.create(ctx.View.prototype);view.training=true;view.contact={x:0,y:0};view.drag={maxPull:115};
+const anchor={x:100,y:100},origin={x:440,y:290};
+const shot=(x,y,strength=80)=>view.dragShot(anchor,{clientX:x,clientY:y},origin,strength);
+assert(shot(100,180).power>shot(100,140).power);
+assert(shot(100,220,90).power>shot(100,220,30).power);
+assert(Math.abs(shot(100,1000).power-.96)<1e-12);
+assert(shot(150,180).aim.x<440);assert(shot(50,180).aim.x>440);
+const center=shot(100,180);view.contact={x:0,y:-.7};assert(shot(100,180).aim.y<center.aim.y);
+view.contact={x:.6,y:0};assert(shot(100,180).curve<0);
+view.contact={x:-.6,y:0};assert(shot(100,180).curve>0);
+console.log('PASS: arrasto, potência limitada pelo atributo, direção, contato baixo para altura e laterais para curva.');

@@ -1,12 +1,6 @@
 'use strict';
-// Base de clubes da temporada 2025/26; resultados e calendário são simulados.
-const LEAGUES = [
- {id:'eng',name:'Premier League',country:'Inglaterra',teams:['Arsenal','Aston Villa','Bournemouth','Brentford','Brighton','Burnley','Chelsea','Crystal Palace','Everton','Fulham','Leeds United','Liverpool','Manchester City','Manchester United','Newcastle United','Nottingham Forest','Sunderland','Tottenham','West Ham','Wolverhampton']},
- {id:'esp',name:'La Liga',country:'Espanha',teams:['Alavés','Athletic Club','Atlético de Madrid','Barcelona','Celta de Vigo','Elche','Espanyol','Getafe','Girona','Levante','Mallorca','Osasuna','Rayo Vallecano','Real Betis','Real Madrid','Real Oviedo','Real Sociedad','Sevilla','Valencia','Villarreal']},
- {id:'ita',name:'Serie A',country:'Itália',teams:['Atalanta','Bologna','Cagliari','Como','Cremonese','Fiorentina','Genoa','Hellas Verona','Inter','Juventus','Lazio','Lecce','Milan','Napoli','Parma','Pisa','Roma','Sassuolo','Torino','Udinese']},
- {id:'ger',name:'Bundesliga',country:'Alemanha',teams:['Augsburg','Bayern München','Borussia Dortmund','Borussia Mönchengladbach','Eintracht Frankfurt','Freiburg','Hamburger SV','Heidenheim','Hoffenheim','Köln','Leipzig','Leverkusen','Mainz','St. Pauli','Stuttgart','Union Berlin','Werder Bremen','Wolfsburg']},
- {id:'fra',name:'Ligue 1',country:'França',teams:['Angers','Auxerre','Brest','Le Havre','Lens','Lille','Lorient','Lyon','Marseille','Metz','Monaco','Nantes','Nice','Paris FC','Paris Saint-Germain','Rennes','Strasbourg','Toulouse']}
-];
+// Snapshots públicos e comunitários; consulte data/SOURCES.md e as notas de cobertura.
+const LEAGUES = FOOTBALL_DATABASE.leagues;
 function makeSchedule(teams){const ring=[...teams],first=[];for(let r=0;r<teams.length-1;r++){const games=[];for(let i=0;i<ring.length/2;i++){const pair=[ring[i],ring[ring.length-1-i]];games.push(r%2?pair.reverse():pair);}first.push(games);ring.splice(1,0,ring.pop());}return first.concat(first.map(games=>games.map(([a,b])=>[b,a])));}
-function newCompetition(id,club,year=1){return{leagueId:id,club,year,round:0,results:[]};}
+function newCompetition(id,club,year=1){return{leagueId:id,club,year,round:0,results:[],playerMatches:[]};}
 function standings(league,results){const rows=new Map(league.teams.map(club=>[club,{club,played:0,wins:0,draws:0,losses:0,gf:0,ga:0,points:0}]));for(const games of results)for(const g of games){const a=rows.get(g.host),b=rows.get(g.guest);a.played++;b.played++;a.gf+=g.hg;a.ga+=g.ag;b.gf+=g.ag;b.ga+=g.hg;if(g.hg>g.ag){a.wins++;b.losses++;a.points+=3;}else if(g.hg<g.ag){b.wins++;a.losses++;b.points+=3;}else{a.draws++;b.draws++;a.points++;b.points++;}}return [...rows.values()].sort((a,b)=>b.points-a.points||(b.gf-b.ga)-(a.gf-a.ga)||b.gf-a.gf||a.club.localeCompare(b.club));}

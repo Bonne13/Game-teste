@@ -1,4 +1,4 @@
-const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');const box={assert,console};vm.createContext(box);for(const file of ['leagues.js','career-data.js','career-economy.js','training-engine.js','match-engine.js','recovery.js'])vm.runInContext(fs.readFileSync(file,'utf8'),box);
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');const box={assert,console};vm.createContext(box);for(const file of ['club-database.js','leagues.js','career-data.js','career-economy.js','training-engine.js','match-engine.js','recovery.js'])vm.runInContext(fs.readFileSync(file,'utf8'),box);
 vm.runInContext(`
 function player(){const p={money:10000000,energy:20,skill:80,matches:0,goals:0,rep:200,recruited:true,training:Object.fromEntries(Object.keys(CAREER_SKILLS).map(id=>[id,[80]]))};prepareEconomy(p,{leagueId:'eng',club:'Arsenal',round:0});return p;}
 const p=player();assert.equal(CAREER_CATALOG.length,21);assert.equal(CAREER_AGENTS.length,3);assert.equal(CAREER_SPONSORS.length,8);

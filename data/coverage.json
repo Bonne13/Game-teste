@@ -1,0 +1,2208 @@
+{
+  "meta": {
+    "targetEurope": "2026/27",
+    "targetBrazil": "2026",
+    "snapshot": "2026-10-11",
+    "notice": "Base nominal comunitária: nomes reais; associações e ratings podem estar incompletos. Jogadores com fonte histórica não têm vínculo 2026 confirmado. Esp2/Ita2/Fra2: composição de acesso não verificada. Resultados da carreira são simulados.",
+    "clubs": 238,
+    "players": 7170,
+    "historicalPlayers": 2565
+  },
+  "clubs": [
+    {
+      "club": "Arsenal",
+      "league": "eng",
+      "players": 60,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 4,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 36
+      }
+    },
+    {
+      "club": "Aston Villa",
+      "league": "eng",
+      "players": 32,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 22,
+        "FC27 comunitário 2026-10-11": 8,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 2
+      }
+    },
+    {
+      "club": "Bournemouth",
+      "league": "eng",
+      "players": 34,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 11,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 18,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Brentford",
+      "league": "eng",
+      "players": 32,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Brighton",
+      "league": "eng",
+      "players": 37,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7
+      }
+    },
+    {
+      "club": "Chelsea",
+      "league": "eng",
+      "players": 33,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3
+      }
+    },
+    {
+      "club": "Coventry City",
+      "league": "eng",
+      "players": 33,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "FC27 comunitário 2026-10-11": 12,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 2
+      }
+    },
+    {
+      "club": "Crystal Palace",
+      "league": "eng",
+      "players": 38,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 26,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7,
+        "FC27 comunitário 2026-10-11": 5
+      }
+    },
+    {
+      "club": "Everton",
+      "league": "eng",
+      "players": 25,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 15,
+        "FC27 comunitário 2026-10-11": 4,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6
+      }
+    },
+    {
+      "club": "Fulham",
+      "league": "eng",
+      "players": 27,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 2
+      }
+    },
+    {
+      "club": "Hull City",
+      "league": "eng",
+      "players": 43,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 22
+      }
+    },
+    {
+      "club": "Ipswich Town",
+      "league": "eng",
+      "players": 37,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "FC27 comunitário 2026-10-11": 8,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8
+      }
+    },
+    {
+      "club": "Leeds United",
+      "league": "eng",
+      "players": 26,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 18,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3,
+        "FC27 comunitário 2026-10-11": 5
+      }
+    },
+    {
+      "club": "Liverpool",
+      "league": "eng",
+      "players": 34,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 18,
+        "FC27 comunitário 2026-10-11": 11,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Manchester City",
+      "league": "eng",
+      "players": 31,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "FC27 comunitário 2026-10-11": 7,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3
+      }
+    },
+    {
+      "club": "Manchester United",
+      "league": "eng",
+      "players": 35,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 28,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7
+      }
+    },
+    {
+      "club": "Newcastle United",
+      "league": "eng",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7
+      }
+    },
+    {
+      "club": "Nottingham Forest",
+      "league": "eng",
+      "players": 31,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 27,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Sunderland",
+      "league": "eng",
+      "players": 39,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 16,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Tottenham",
+      "league": "eng",
+      "players": 35,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3
+      }
+    },
+    {
+      "club": "Birmingham City",
+      "league": "eng2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 24,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Blackburn Rovers",
+      "league": "eng2",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 17,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 10
+      }
+    },
+    {
+      "club": "Bolton Wanderers",
+      "league": "eng2",
+      "players": 33,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 24
+      }
+    },
+    {
+      "club": "Bristol City",
+      "league": "eng2",
+      "players": 29,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11,
+        "FC27 comunitário 2026-10-11": 18
+      }
+    },
+    {
+      "club": "Burnley",
+      "league": "eng2",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 25,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Cardiff City",
+      "league": "eng2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 17,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Charlton Athletic",
+      "league": "eng2",
+      "players": 24,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 15,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9
+      }
+    },
+    {
+      "club": "Derby County",
+      "league": "eng2",
+      "players": 31,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8
+      }
+    },
+    {
+      "club": "Lincoln City",
+      "league": "eng2",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 11,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 19
+      }
+    },
+    {
+      "club": "Middlesbrough",
+      "league": "eng2",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9
+      }
+    },
+    {
+      "club": "Millwall",
+      "league": "eng2",
+      "players": 34,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14
+      }
+    },
+    {
+      "club": "Norwich City",
+      "league": "eng2",
+      "players": 36,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 22,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14
+      }
+    },
+    {
+      "club": "Portsmouth",
+      "league": "eng2",
+      "players": 35,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15
+      }
+    },
+    {
+      "club": "Preston North End",
+      "league": "eng2",
+      "players": 32,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12
+      }
+    },
+    {
+      "club": "Queens Park Rangers",
+      "league": "eng2",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Sheffield United",
+      "league": "eng2",
+      "players": 36,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 25,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Southampton",
+      "league": "eng2",
+      "players": 23,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Stoke City",
+      "league": "eng2",
+      "players": 32,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12
+      }
+    },
+    {
+      "club": "Swansea City",
+      "league": "eng2",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Watford",
+      "league": "eng2",
+      "players": 29,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 18,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "West Bromwich Albion",
+      "league": "eng2",
+      "players": 19,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 14,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "West Ham",
+      "league": "eng2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8
+      }
+    },
+    {
+      "club": "Wolverhampton",
+      "league": "eng2",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9
+      }
+    },
+    {
+      "club": "Wrexham",
+      "league": "eng2",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7
+      }
+    },
+    {
+      "club": "Alavés",
+      "league": "esp",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 3,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6
+      }
+    },
+    {
+      "club": "Athletic Club",
+      "league": "esp",
+      "players": 27,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Atlético de Madrid",
+      "league": "esp",
+      "players": 31,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "FC27 comunitário 2026-10-11": 5,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3
+      }
+    },
+    {
+      "club": "Barcelona",
+      "league": "esp",
+      "players": 33,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3
+      }
+    },
+    {
+      "club": "Celta de Vigo",
+      "league": "esp",
+      "players": 33,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 4,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 25
+      }
+    },
+    {
+      "club": "Deportivo La Coruña",
+      "league": "esp",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Elche",
+      "league": "esp",
+      "players": 36,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Espanyol",
+      "league": "esp",
+      "players": 31,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Getafe",
+      "league": "esp",
+      "players": 31,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "FC27 comunitário 2026-10-11": 4,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Levante",
+      "league": "esp",
+      "players": 34,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Málaga",
+      "league": "esp",
+      "players": 37,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 22,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Osasuna",
+      "league": "esp",
+      "players": 26,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "FC27 comunitário 2026-10-11": 3,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 2
+      }
+    },
+    {
+      "club": "Racing Santander",
+      "league": "esp",
+      "players": 32,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12,
+        "FC27 comunitário 2026-10-11": 20
+      }
+    },
+    {
+      "club": "Rayo Vallecano",
+      "league": "esp",
+      "players": 34,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Real Betis",
+      "league": "esp",
+      "players": 31,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Real Madrid",
+      "league": "esp",
+      "players": 29,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Real Sociedad",
+      "league": "esp",
+      "players": 31,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "FC27 comunitário 2026-10-11": 3,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Sevilla",
+      "league": "esp",
+      "players": 37,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Valencia",
+      "league": "esp",
+      "players": 34,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 22,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Villarreal",
+      "league": "esp",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 4,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4
+      }
+    },
+    {
+      "club": "Albacete",
+      "league": "esp2",
+      "players": 25,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 16
+      }
+    },
+    {
+      "club": "Almería",
+      "league": "esp2",
+      "players": 29,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 18,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Andorra",
+      "league": "esp2",
+      "players": 23,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 4,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 19
+      }
+    },
+    {
+      "club": "Burgos",
+      "league": "esp2",
+      "players": 20,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 10,
+        "FC27 comunitário 2026-10-11": 10
+      }
+    },
+    {
+      "club": "Castellón",
+      "league": "esp2",
+      "players": 23,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 12,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Celta Fortuna",
+      "league": "esp2",
+      "players": 23,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 20,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Ceuta",
+      "league": "esp2",
+      "players": 25,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 19,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Cádiz",
+      "league": "esp2",
+      "players": 25,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 13,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12
+      }
+    },
+    {
+      "club": "Córdoba",
+      "league": "esp2",
+      "players": 26,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 12,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14
+      }
+    },
+    {
+      "club": "Eibar",
+      "league": "esp2",
+      "players": 24,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 18,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Eldense",
+      "league": "esp2",
+      "players": 19,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Girona",
+      "league": "esp2",
+      "players": 22,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 15,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7
+      }
+    },
+    {
+      "club": "Granada",
+      "league": "esp2",
+      "players": 22,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12
+      }
+    },
+    {
+      "club": "Las Palmas",
+      "league": "esp2",
+      "players": 31,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 17,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14
+      }
+    },
+    {
+      "club": "Leganés",
+      "league": "esp2",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 16,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Mallorca",
+      "league": "esp2",
+      "players": 25,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 14,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Real Oviedo",
+      "league": "esp2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 15,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 13
+      }
+    },
+    {
+      "club": "Real Sociedad B",
+      "league": "esp2",
+      "players": 19,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14,
+        "FC27 comunitário 2026-10-11": 5
+      }
+    },
+    {
+      "club": "Sabadell",
+      "league": "esp2",
+      "players": 22,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17,
+        "FC27 comunitário 2026-10-11": 5
+      }
+    },
+    {
+      "club": "Sporting Gijón",
+      "league": "esp2",
+      "players": 17,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 11,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6
+      }
+    },
+    {
+      "club": "Tenerife",
+      "league": "esp2",
+      "players": 26,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 18,
+        "FC27 comunitário 2026-10-11": 8
+      }
+    },
+    {
+      "club": "Valladolid",
+      "league": "esp2",
+      "players": 14,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 14
+      }
+    },
+    {
+      "club": "Atalanta",
+      "league": "ita",
+      "players": 26,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 18,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 2
+      }
+    },
+    {
+      "club": "Bologna",
+      "league": "ita",
+      "players": 33,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Cagliari",
+      "league": "ita",
+      "players": 34,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Como",
+      "league": "ita",
+      "players": 38,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9
+      }
+    },
+    {
+      "club": "Fiorentina",
+      "league": "ita",
+      "players": 33,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 7,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6
+      }
+    },
+    {
+      "club": "Frosinone",
+      "league": "ita",
+      "players": 46,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 7,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 18,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21
+      }
+    },
+    {
+      "club": "Genoa",
+      "league": "ita",
+      "players": 34,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Inter",
+      "league": "ita",
+      "players": 24,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Juventus",
+      "league": "ita",
+      "players": 34,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 8,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3
+      }
+    },
+    {
+      "club": "Lazio",
+      "league": "ita",
+      "players": 33,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5,
+        "FC27 comunitário 2026-10-11": 7
+      }
+    },
+    {
+      "club": "Lecce",
+      "league": "ita",
+      "players": 30,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 22,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Milan",
+      "league": "ita",
+      "players": 44,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Monza",
+      "league": "ita",
+      "players": 38,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8,
+        "FC27 comunitário 2026-10-11": 7
+      }
+    },
+    {
+      "club": "Napoli",
+      "league": "ita",
+      "players": 29,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 2,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Parma",
+      "league": "ita",
+      "players": 41,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Roma",
+      "league": "ita",
+      "players": 28,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3
+      }
+    },
+    {
+      "club": "Sassuolo",
+      "league": "ita",
+      "players": 38,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Torino",
+      "league": "ita",
+      "players": 41,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "FC27 comunitário 2026-10-11": 7,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 10
+      }
+    },
+    {
+      "club": "Udinese",
+      "league": "ita",
+      "players": 28,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Venezia",
+      "league": "ita",
+      "players": 42,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 7,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 22,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 13
+      }
+    },
+    {
+      "club": "Arezzo",
+      "league": "ita2",
+      "players": 33,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 13,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 20
+      }
+    },
+    {
+      "club": "Ascoli",
+      "league": "ita2",
+      "players": 26,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 23,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Avellino",
+      "league": "ita2",
+      "players": 17,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 17
+      }
+    },
+    {
+      "club": "Benevento",
+      "league": "ita2",
+      "players": 34,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 24
+      }
+    },
+    {
+      "club": "Carrarese",
+      "league": "ita2",
+      "players": 12,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 12
+      }
+    },
+    {
+      "club": "Catanzaro",
+      "league": "ita2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 13,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15
+      }
+    },
+    {
+      "club": "Cesena",
+      "league": "ita2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 13,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15
+      }
+    },
+    {
+      "club": "Cremonese",
+      "league": "ita2",
+      "players": 29,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9
+      }
+    },
+    {
+      "club": "Empoli",
+      "league": "ita2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 18
+      }
+    },
+    {
+      "club": "Hellas Verona",
+      "league": "ita2",
+      "players": 31,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12
+      }
+    },
+    {
+      "club": "Juve Stabia",
+      "league": "ita2",
+      "players": 21,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Mantova",
+      "league": "ita2",
+      "players": 25,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15
+      }
+    },
+    {
+      "club": "Modena",
+      "league": "ita2",
+      "players": 24,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 14,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 10
+      }
+    },
+    {
+      "club": "Padova",
+      "league": "ita2",
+      "players": 39,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 19,
+        "FC27 comunitário 2026-10-11": 20
+      }
+    },
+    {
+      "club": "Palermo",
+      "league": "ita2",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7
+      }
+    },
+    {
+      "club": "Pisa",
+      "league": "ita2",
+      "players": 16,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 16
+      }
+    },
+    {
+      "club": "Sampdoria",
+      "league": "ita2",
+      "players": 21,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 21
+      }
+    },
+    {
+      "club": "Südtirol",
+      "league": "ita2",
+      "players": 22,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 14,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8
+      }
+    },
+    {
+      "club": "Vicenza",
+      "league": "ita2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 13,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15
+      }
+    },
+    {
+      "club": "Virtus Entella",
+      "league": "ita2",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Augsburg",
+      "league": "ger",
+      "players": 32,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 18,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8
+      }
+    },
+    {
+      "club": "Bayern München",
+      "league": "ger",
+      "players": 23,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 23
+      }
+    },
+    {
+      "club": "Borussia Dortmund",
+      "league": "ger",
+      "players": 29,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6
+      }
+    },
+    {
+      "club": "Borussia Mönchengladbach",
+      "league": "ger",
+      "players": 29,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 24,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Eintracht Frankfurt",
+      "league": "ger",
+      "players": 32,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6
+      }
+    },
+    {
+      "club": "Elversberg",
+      "league": "ger",
+      "players": 32,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12,
+        "FC27 comunitário 2026-10-11": 1
+      }
+    },
+    {
+      "club": "Freiburg",
+      "league": "ger",
+      "players": 31,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 18,
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3
+      }
+    },
+    {
+      "club": "Hamburger SV",
+      "league": "ger",
+      "players": 36,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "FC27 comunitário 2026-10-11": 5,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 10
+      }
+    },
+    {
+      "club": "Hoffenheim",
+      "league": "ger",
+      "players": 27,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Köln",
+      "league": "ger",
+      "players": 36,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "FC27 comunitário 2026-10-11": 5,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12
+      }
+    },
+    {
+      "club": "Leipzig",
+      "league": "ger",
+      "players": 34,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "FC27 comunitário 2026-10-11": 5,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Leverkusen",
+      "league": "ger",
+      "players": 30,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "FC27 comunitário 2026-10-11": 5,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6
+      }
+    },
+    {
+      "club": "Mainz",
+      "league": "ger",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 22,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Paderborn",
+      "league": "ger",
+      "players": 38,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 13,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 18,
+        "FC27 comunitário 2026-10-11": 7
+      }
+    },
+    {
+      "club": "Schalke 04",
+      "league": "ger",
+      "players": 43,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17,
+        "FC27 comunitário 2026-10-11": 5
+      }
+    },
+    {
+      "club": "Stuttgart",
+      "league": "ger",
+      "players": 34,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 8,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7
+      }
+    },
+    {
+      "club": "Union Berlin",
+      "league": "ger",
+      "players": 31,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4,
+        "FC27 comunitário 2026-10-11": 7
+      }
+    },
+    {
+      "club": "Werder Bremen",
+      "league": "ger",
+      "players": 34,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 10,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 4,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20
+      }
+    },
+    {
+      "club": "Arminia Bielefeld",
+      "league": "ger2",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 11,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 16
+      }
+    },
+    {
+      "club": "Bochum",
+      "league": "ger2",
+      "players": 32,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 16,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 16
+      }
+    },
+    {
+      "club": "Braunschweig",
+      "league": "ger2",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 7,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 20
+      }
+    },
+    {
+      "club": "Darmstadt",
+      "league": "ger2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 14,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14
+      }
+    },
+    {
+      "club": "Dynamo Dresden",
+      "league": "ger2",
+      "players": 13,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 13
+      }
+    },
+    {
+      "club": "Energie Cottbus",
+      "league": "ger2",
+      "players": 21,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 4,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Greuther Fürth",
+      "league": "ger2",
+      "players": 22,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15,
+        "FC27 comunitário 2026-10-11": 7
+      }
+    },
+    {
+      "club": "Hannover",
+      "league": "ger2",
+      "players": 26,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 15,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Heidenheim",
+      "league": "ger2",
+      "players": 26,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 18,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8
+      }
+    },
+    {
+      "club": "Hertha Berlin",
+      "league": "ger2",
+      "players": 28,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17,
+        "FC27 comunitário 2026-10-11": 11
+      }
+    },
+    {
+      "club": "Holstein Kiel",
+      "league": "ger2",
+      "players": 22,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 12,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 10
+      }
+    },
+    {
+      "club": "Kaiserslautern",
+      "league": "ger2",
+      "players": 29,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 14,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15
+      }
+    },
+    {
+      "club": "Karlsruher SC",
+      "league": "ger2",
+      "players": 18,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12
+      }
+    },
+    {
+      "club": "Magdeburg",
+      "league": "ger2",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 21
+      }
+    },
+    {
+      "club": "Nürnberg",
+      "league": "ger2",
+      "players": 29,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 8,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 21
+      }
+    },
+    {
+      "club": "Osnabrück",
+      "league": "ger2",
+      "players": 20,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "St. Pauli",
+      "league": "ger2",
+      "players": 26,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 15,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Wolfsburg",
+      "league": "ger2",
+      "players": 31,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8
+      }
+    },
+    {
+      "club": "Angers",
+      "league": "fra",
+      "players": 34,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Auxerre",
+      "league": "fra",
+      "players": 34,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 22,
+        "FC27 comunitário 2026-10-11": 5
+      }
+    },
+    {
+      "club": "Brest",
+      "league": "fra",
+      "players": 28,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Le Havre",
+      "league": "fra",
+      "players": 38,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 23,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 13,
+        "FC27 comunitário 2026-10-11": 2
+      }
+    },
+    {
+      "club": "Le Mans",
+      "league": "fra",
+      "players": 36,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 25,
+        "FC27 comunitário 2026-10-11": 2
+      }
+    },
+    {
+      "club": "Lens",
+      "league": "fra",
+      "players": 36,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 22,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 10,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Lille",
+      "league": "fra",
+      "players": 32,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 7
+      }
+    },
+    {
+      "club": "Lorient",
+      "league": "fra",
+      "players": 30,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 7,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 18,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Lyon",
+      "league": "fra",
+      "players": 27,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "FC27 comunitário 2026-10-11": 2,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 1
+      }
+    },
+    {
+      "club": "Marseille",
+      "league": "fra",
+      "players": 28,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Monaco",
+      "league": "fra",
+      "players": 35,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5
+      }
+    },
+    {
+      "club": "Nice",
+      "league": "fra",
+      "players": 38,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 24,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8,
+        "FC27 comunitário 2026-10-11": 6
+      }
+    },
+    {
+      "club": "Paris FC",
+      "league": "fra",
+      "players": 33,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "FC27 comunitário 2026-10-11": 5,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9
+      }
+    },
+    {
+      "club": "Paris Saint-Germain",
+      "league": "fra",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 4,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 3,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20
+      }
+    },
+    {
+      "club": "Rennes",
+      "league": "fra",
+      "players": 29,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 3,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6
+      }
+    },
+    {
+      "club": "Strasbourg",
+      "league": "fra",
+      "players": 37,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8,
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 20,
+        "FC27 comunitário 2026-10-11": 9
+      }
+    },
+    {
+      "club": "Toulouse",
+      "league": "fra",
+      "players": 36,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 21,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Troyes",
+      "league": "fra",
+      "players": 37,
+      "sources": {
+        "FBref 2026/27; rating público FC27 ou estimativa 65": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 13,
+        "FC27 comunitário 2026-10-11": 5
+      }
+    },
+    {
+      "club": "Annecy",
+      "league": "fra2",
+      "players": 17,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 7,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 10
+      }
+    },
+    {
+      "club": "Bastia",
+      "league": "fra2",
+      "players": 20,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 20
+      }
+    },
+    {
+      "club": "Clermont",
+      "league": "fra2",
+      "players": 15,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 12,
+        "FC27 comunitário 2026-10-11": 3
+      }
+    },
+    {
+      "club": "Dijon",
+      "league": "fra2",
+      "players": 22,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 21,
+        "FC27 comunitário 2026-10-11": 1
+      }
+    },
+    {
+      "club": "Dunkerque",
+      "league": "fra2",
+      "players": 18,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14,
+        "FC27 comunitário 2026-10-11": 4
+      }
+    },
+    {
+      "club": "Grenoble",
+      "league": "fra2",
+      "players": 26,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Guingamp",
+      "league": "fra2",
+      "players": 20,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 6,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14
+      }
+    },
+    {
+      "club": "Laval",
+      "league": "fra2",
+      "players": 22,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 5,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Metz",
+      "league": "fra2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 11,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Montpellier",
+      "league": "fra2",
+      "players": 23,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14
+      }
+    },
+    {
+      "club": "Nancy",
+      "league": "fra2",
+      "players": 22,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 4,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 18
+      }
+    },
+    {
+      "club": "Nantes",
+      "league": "fra2",
+      "players": 28,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 15,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 13
+      }
+    },
+    {
+      "club": "Pau",
+      "league": "fra2",
+      "players": 22,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 5,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Red Star",
+      "league": "fra2",
+      "players": 21,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 8,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 13
+      }
+    },
+    {
+      "club": "Reims",
+      "league": "fra2",
+      "players": 27,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 9,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 18
+      }
+    },
+    {
+      "club": "Rodez",
+      "league": "fra2",
+      "players": 23,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 2,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 21
+      }
+    },
+    {
+      "club": "Saint-Étienne",
+      "league": "fra2",
+      "players": 26,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 17,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 9
+      }
+    },
+    {
+      "club": "Sochaux",
+      "league": "fra2",
+      "players": 23,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 2,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 21
+      }
+    },
+    {
+      "club": "Athletico-PR",
+      "league": "bra",
+      "players": 59,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 42,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Atlético-MG",
+      "league": "bra",
+      "players": 52,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11,
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 39,
+        "FC27 comunitário 2026-10-11": 2
+      }
+    },
+    {
+      "club": "Bahia",
+      "league": "bra",
+      "players": 53,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 19,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 5,
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 29
+      }
+    },
+    {
+      "club": "Botafogo",
+      "league": "bra",
+      "players": 67,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 12,
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 40,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 15
+      }
+    },
+    {
+      "club": "Bragantino",
+      "league": "bra",
+      "players": 49,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 14,
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 35
+      }
+    },
+    {
+      "club": "Chapecoense",
+      "league": "bra",
+      "players": 64,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17,
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 47
+      }
+    },
+    {
+      "club": "Corinthians",
+      "league": "bra",
+      "players": 28,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 28
+      }
+    },
+    {
+      "club": "Coritiba",
+      "league": "bra",
+      "players": 44,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 44
+      }
+    },
+    {
+      "club": "Cruzeiro",
+      "league": "bra",
+      "players": 42,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 6,
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 35,
+        "FC27 comunitário 2026-10-11": 1
+      }
+    },
+    {
+      "club": "Flamengo",
+      "league": "bra",
+      "players": 58,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 47,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Fluminense",
+      "league": "bra",
+      "players": 35,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 35
+      }
+    },
+    {
+      "club": "Grêmio",
+      "league": "bra",
+      "players": 33,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 33
+      }
+    },
+    {
+      "club": "Internacional",
+      "league": "bra",
+      "players": 35,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 35
+      }
+    },
+    {
+      "club": "Mirassol",
+      "league": "bra",
+      "players": 32,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 32
+      }
+    },
+    {
+      "club": "Palmeiras",
+      "league": "bra",
+      "players": 30,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 30
+      }
+    },
+    {
+      "club": "Remo",
+      "league": "bra",
+      "players": 34,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 34
+      }
+    },
+    {
+      "club": "Santos",
+      "league": "bra",
+      "players": 48,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 40,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 8
+      }
+    },
+    {
+      "club": "São Paulo",
+      "league": "bra",
+      "players": 60,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 22,
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 38
+      }
+    },
+    {
+      "club": "Vasco",
+      "league": "bra",
+      "players": 36,
+      "sources": {
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 36
+      }
+    },
+    {
+      "club": "Vitória",
+      "league": "bra",
+      "players": 64,
+      "sources": {
+        "FC27 comunitário 2026-10-11": 12,
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11,
+        "BRASIM26 snapshot 2026-06; associação aproximada, rating próprio": 41
+      }
+    },
+    {
+      "club": "América-MG",
+      "league": "bra2",
+      "players": 27,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 27
+      }
+    },
+    {
+      "club": "Athletic-MG",
+      "league": "bra2",
+      "players": 18,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 18
+      }
+    },
+    {
+      "club": "Atlético-GO",
+      "league": "bra2",
+      "players": 11,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 11
+      }
+    },
+    {
+      "club": "Avaí",
+      "league": "bra2",
+      "players": 20,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 20
+      }
+    },
+    {
+      "club": "Botafogo-SP",
+      "league": "bra2",
+      "players": 35,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 35
+      }
+    },
+    {
+      "club": "CRB",
+      "league": "bra2",
+      "players": 25,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 25
+      }
+    },
+    {
+      "club": "Ceará",
+      "league": "bra2",
+      "players": 18,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 18
+      }
+    },
+    {
+      "club": "Criciúma",
+      "league": "bra2",
+      "players": 25,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 25
+      }
+    },
+    {
+      "club": "Cuiabá",
+      "league": "bra2",
+      "players": 23,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 23
+      }
+    },
+    {
+      "club": "Fortaleza",
+      "league": "bra2",
+      "players": 28,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 28
+      }
+    },
+    {
+      "club": "Goiás",
+      "league": "bra2",
+      "players": 20,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 20
+      }
+    },
+    {
+      "club": "Juventude",
+      "league": "bra2",
+      "players": 24,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 24
+      }
+    },
+    {
+      "club": "Londrina",
+      "league": "bra2",
+      "players": 27,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 27
+      }
+    },
+    {
+      "club": "Novorizontino",
+      "league": "bra2",
+      "players": 21,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 21
+      }
+    },
+    {
+      "club": "Náutico",
+      "league": "bra2",
+      "players": 25,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 25
+      }
+    },
+    {
+      "club": "Operário-PR",
+      "league": "bra2",
+      "players": 32,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 32
+      }
+    },
+    {
+      "club": "Ponte Preta",
+      "league": "bra2",
+      "players": 17,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 17
+      }
+    },
+    {
+      "club": "Sport",
+      "league": "bra2",
+      "players": 16,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 16
+      }
+    },
+    {
+      "club": "São Bernardo",
+      "league": "bra2",
+      "players": 19,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 19
+      }
+    },
+    {
+      "club": "Vila Nova",
+      "league": "bra2",
+      "players": 19,
+      "sources": {
+        "Transfermarkt snapshot 2025; vínculo 2026 não confirmado": 19
+      }
+    }
+  ]
+}

@@ -8,7 +8,7 @@ for file in assets.iterdir():
  if file.is_file():file.unlink()
 for file in [root/'index.html',*root.glob('*.js'),*root.glob('*.json')]:
  if file.name not in ['package.json','package-lock.json']:shutil.copy2(file,assets/file.name)
-for directory in ['data']:
+for directory in ['data','vendor']:
  if (root/directory).is_dir():shutil.copytree(root/directory,assets/directory,dirs_exist_ok=True)
 go=os.environ.get('GO_BINARY') or shutil.which('go')
 if Path('/tmp/star-go-sdk/go/bin/go').exists() and not os.environ.get('GO_BINARY'):go='/tmp/star-go-sdk/go/bin/go'
