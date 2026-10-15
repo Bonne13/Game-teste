@@ -2,10 +2,10 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const box={assert,console};vm.createContext(box);vm.runInContext(fs.readFileSync('training-engine.js','utf8'),box);
 vm.runInContext(`
 function advance(trial,seconds,keys={}){for(let i=0;i<Math.ceil(seconds/.01);i++)trial.tick(.01,keys);}
-const shot=new TrainingTrial('shoot');shot.aim={...shot.target};shot.release(.75);advance(shot,1);assert.equal(shot.score,100);assert(shot.resolved);
+const shot=new TrainingTrial('shoot');shot.aim={...shot.target};shot.release(.75);advance(shot,1);assert.equal(shot.score,100);assert(shot.resolved);assert.equal(shot.shot.outcome,'goal');
 const miss=new TrainingTrial('shoot');miss.aim={x:440,y:0};miss.release(1);advance(miss,1);assert.equal(miss.score,0);
-const save=new TrainingTrial('shoot');save.aim={x:440,y:60};save.release(.75);advance(save,1);assert.equal(save.score,0);assert.match(save.message,/defendeu/);
-const straight=new TrainingTrial('freekick');straight.aim={...straight.target};straight.release(.75);advance(straight,1);assert.equal(straight.score,0);assert.match(straight.message,/barreira/);
+const save=new TrainingTrial('shoot');save.aim={x:440,y:60};save.release(.75);advance(save,1);assert.equal(save.score,0);assert.match(save.message,/defendeu/);assert(save.shot.saveContact);assert.equal(save.shot.outcome,'save');
+const straight=new TrainingTrial('freekick');straight.aim={...straight.target};straight.release(.75);advance(straight,1);assert.equal(straight.score,0);assert.match(straight.message,/barreira/);assert.equal(straight.shot.outcome,'wall');assert(straight.shot.block.u>0&&straight.shot.block.u<1);
 const curve=new TrainingTrial('freekick');curve.aim={...curve.target};curve.curve=-1;curve.release(.75);advance(curve,1);assert.equal(curve.score,100);
 // Passe deve antecipar a posição do companheiro no instante da chegada.
 const pass=new TrainingTrial('pass');advance(pass,2);pass.aim=pass.teammate(2.85);pass.release(.55);advance(pass,1);assert(pass.score>=98,pass.message);

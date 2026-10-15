@@ -143,3 +143,11 @@ Validação adicional: `node tests/career-saves.test.cjs` e `GAME_URL=http://127
 Nos treinos, o atacante fica ao lado da bola para não encobrir sua saída. A reprodução do lance avança a 45% da velocidade original, mantém um tamanho mínimo legível da bola na câmera e mostra um rastro curto em 3D. Ao soltar o chute, o campo volta ao centro da tela. A simulação, a força, a curva e o cálculo da nota continuam usando o mesmo tempo lógico.
 
 `GAME_URL=http://127.0.0.1:8011/ node tests/training-flight-browser.test.cjs` acompanha vários quadros depois de um chute por toque: verifica deslocamento até o gol, ausência de oclusão pelo próprio atacante, tamanho em pixels, duração, rastro e enquadramento do campo.
+
+## Controle de efeito e destino final — v0.5.2
+
+No treino, toque na bola para selecionar o efeito. Depois segure e arraste para baixo: somente essa distância define a potência, limitada pela força do jogador. Segurar parado, arrastar para cima ou só para o lado não chuta. O ponto escolhido permanece travado durante o arrasto; outro toque sem arrastar troca o efeito. A mira no campo permanece fixa enquanto se define a força. A seleção usa interseção analítica com a esfera e tolerância nas bordas do controle. O medidor e o ponto de contato atualizam imediatamente.
+
+A câmera acompanha o lance e aproxima o destino. A bola fica acima do gramado inclusive nos chutes fracos. Gol termina dentro da rede; defesa para antes da linha; barreira e interceptação param a trajetória no contato. Um marcador Bola aqui e uma legenda de resultado permanecem visíveis até a próxima tentativa.
+
+Verificação: `node tests/training-controls-browser.test.cjs` exercita toque, gesto e destino; `node tests/training-destinations-browser.test.cjs` cobre gol, defesa, barreira, chute curto, direita, esquerda e acima do travessão. Use `GAME_URL` para apontar ao servidor local.

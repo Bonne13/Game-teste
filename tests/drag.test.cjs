@@ -4,7 +4,7 @@ vm.runInContext(fs.readFileSync('football-3d.js','utf8')+';globalThis.View=Footb
 const view=Object.create(ctx.View.prototype);view.training=true;view.contact={x:0,y:0};view.drag={maxPull:115};
 const anchor={x:100,y:100},origin={x:440,y:290};
 const shot=(x,y,strength=80)=>view.dragShot(anchor,{clientX:x,clientY:y},origin,strength);
-assert(shot(100,180).power>shot(100,140).power);
+assert(shot(100,180).power>shot(100,140).power);assert.equal(shot(250,100).power,0);assert.equal(shot(100,20).power,0);assert.equal(shot(100,100).power,0);
 assert(shot(100,220,90).power>shot(100,220,30).power);
 assert(Math.abs(shot(100,1000).power-.96)<1e-12);
 assert(shot(150,180).aim.x<440);assert(shot(50,180).aim.x>440);
