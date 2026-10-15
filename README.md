@@ -137,3 +137,9 @@ As 220 opções unem os 193 membros e dois observadores da ONU às 211 associaç
 Opções permite controlar o volume geral e silenciar os sons de menu e chute. O áudio sintetizado inicia após interação e não precisa de downloads. Configurações de áudio são compartilhadas; progresso de cada carreira é isolado. O botão Menu inicial retorna após concluir a partida ou interromper o treino. Saves ficam neste navegador/aparelho; não há sincronização com servidor. O cenário 3D só é inicializado ao entrar em uma carreira.
 
 Validação adicional: `node tests/career-saves.test.cjs` e `GAME_URL=http://127.0.0.1:8011/ node tests/menu-browser.test.cjs`. Os testes de jogabilidade existentes usam `tests/game-page.cjs` para entrar diretamente em uma carreira; o teste de menu percorre a criação e troca de saves sem esse atalho.
+
+## Visibilidade da bola durante o chute — v0.5.1
+
+Nos treinos, o atacante fica ao lado da bola para não encobrir sua saída. A reprodução do lance avança a 45% da velocidade original, mantém um tamanho mínimo legível da bola na câmera e mostra um rastro curto em 3D. Ao soltar o chute, o campo volta ao centro da tela. A simulação, a força, a curva e o cálculo da nota continuam usando o mesmo tempo lógico.
+
+`GAME_URL=http://127.0.0.1:8011/ node tests/training-flight-browser.test.cjs` acompanha vários quadros depois de um chute por toque: verifica deslocamento até o gol, ausência de oclusão pelo próprio atacante, tamanho em pixels, duração, rastro e enquadramento do campo.

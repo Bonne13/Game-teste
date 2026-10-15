@@ -19,7 +19,7 @@ def build():
             shutil.copy2(source, OUTPUT / source.name)
     page = (OUTPUT / 'index.html').read_text()
     page = page.replace('</head>', '<meta name="theme-color" content="#101a19">\n<link rel="manifest" href="manifest.webmanifest">\n<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">\n</head>')
-    page = page.replace('</body>', '<p class="sub" id="webAvailability" role="status" style="text-align:center;padding:0 16px 18px">Controles v0.5.0 · Mire no campo; depois toque na bola. Sua carreira fica neste navegador.</p><script src="web-app.js"></script></body>')
+    page = page.replace('</body>', '<p class="sub" id="webAvailability" role="status" style="text-align:center;padding:0 16px 18px">Controles v0.5.1 · Mire no campo; depois toque na bola. Sua carreira fica neste navegador.</p><script src="web-app.js"></script></body>')
     (OUTPUT / 'index.html').write_text(page)
     (OUTPUT / '.nojekyll').touch()
     files = sorted(p for p in OUTPUT.rglob('*') if p.is_file())
