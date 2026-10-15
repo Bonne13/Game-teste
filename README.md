@@ -127,3 +127,13 @@ Atualização do navegador v0.4.3: se uma aba manteve controles antigos, depois 
 Correção web v0.4.4: mira com retículo visível desde o toque no campo e bola ampliada 3D renderizada pelo mesmo contexto WebGL do campo. Evita criar dois contextos gráficos extras no celular. O teste móvel verifica pixels claros/escuros da bola, pausa e novo gesto antes de finalizar.
 
 Treinos v0.4.5: o retículo e uma mira inicial aparecem ao começar cada tentativa. O botão Preparar chute · abrir bola abre a preparação mesmo sem tocar no campo; o toque no campo continua disponível. A preparação usa leitura direta dos pixels 3D para evitar depender da cópia entre superfícies gráficas do navegador. A versão fica no topo da tela.
+
+## Menu inicial e carreiras — v0.5.0
+
+Ao abrir o jogo, escolha Carreiras, Conquistas ou Opções. Há seis slots locais. Um save anterior é migrado integralmente para o primeiro slot; selecionar um slot vazio abre identidade (nome, nacionalidade e uma das 12 ligas), depois posição (ATA, PE, PD ou MEI). A posição MEI é considerada meio-campo no elenco e nas premiações. O clube continua definido pelos seis fundamentos, após os treinos.
+
+As 220 opções unem os 193 membros e dois observadores da ONU às 211 associações da FIFA, incluindo seleções de territórios e as quatro seleções britânicas. Fontes e critérios em `data/SOURCES.md`. Conquistas são calculadas a partir das carreiras salvas.
+
+Opções permite controlar o volume geral e silenciar os sons de menu e chute. O áudio sintetizado inicia após interação e não precisa de downloads. Configurações de áudio são compartilhadas; progresso de cada carreira é isolado. O botão Menu inicial retorna após concluir a partida ou interromper o treino. Saves ficam neste navegador/aparelho; não há sincronização com servidor. O cenário 3D só é inicializado ao entrar em uma carreira.
+
+Validação adicional: `node tests/career-saves.test.cjs` e `GAME_URL=http://127.0.0.1:8011/ node tests/menu-browser.test.cjs`. Os testes de jogabilidade existentes usam `tests/game-page.cjs` para entrar diretamente em uma carreira; o teste de menu percorre a criação e troca de saves sem esse atalho.

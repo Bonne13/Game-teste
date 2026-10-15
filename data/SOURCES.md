@@ -16,3 +16,9 @@ A composição das segundas divisões espanhola, italiana e francesa é um cadas
 `coverage.json` registra por clube a quantidade de atletas e as fontes utilizadas. Elencos que não oferecem onze jogadores reais disponíveis ficam incompletos, sem substitutos inventados. Parte dos ratings é uma estimativa própria do protótipo, identificada na origem. Toda estatística, resultado, promoção e premiação produzida durante a carreira é uma simulação.
 
 `tools/import-football-data.py` documenta a transformação dos fatos locais para `club-database.js`. Os snapshots são incorporados no executável para permitir jogar sem internet.
+
+## Nacionalidades / seleções (menu de carreira)
+
+`nationalities.js` reúne 193 membros da ONU, os dois Estados observadores (Santa Sé e Palestina) e as 211 associações da FIFA em 220 opções sem duplicatas. Membros FIFA como Inglaterra, Escócia, País de Gales e Irlanda do Norte aparecem separadamente do Reino Unido; associações de territórios são identificadas pelo nome da seleção. A lista não representa licença comercial nem afirmação de reconhecimento estatal pela FIFA.
+
+Fontes: https://www.un.org/en/about-us/member-states · https://www.un.org/en/about-us/non-member-states · https://inside.fifa.com/associations . Nomes de países em português pelo Intl.DisplayNames; nomes de associações específicos estão explícitos no arquivo.

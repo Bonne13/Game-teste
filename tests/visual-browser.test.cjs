@@ -2,7 +2,7 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict');
 (async()=>{const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});try{
  const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.addInitScript(()=>{if(!localStorage.getItem('proxima-estrela-v1'))localStorage.setItem('proxima-estrela-v1',JSON.stringify({name:'Teste Visual',energy:100,skill:80,rep:10,money:150,matches:0,goals:0,wins:0,points:0,recruited:true,training:Object.fromEntries(['shoot','vision','pass','speed','technique','freekick'].map(k=>[k,[80]]))}));});
- await page.goto(process.env.GAME_URL||'http://127.0.0.1:8000/');await page.locator('.visual-settings summary').click();
+ await require('./game-page.cjs')(page);await page.goto(process.env.GAME_URL||'http://127.0.0.1:8000/');await page.locator('.visual-settings summary').click();
  await page.locator('#visualCamera').selectOption('wide');await page.locator('#visualQuality').selectOption('low');await page.locator('#visualLight').selectOption('night');await page.locator('#visualGuide').uncheck();
  assert(await page.evaluate(()=>Football3D.views.every(v=>!v.renderer.shadowMap.enabled&&v.presentation.settings.light==='night'&&!v.presentation.settings.guide)));
  await page.reload();await page.locator('.visual-settings summary').click();assert.equal(await page.locator('#visualCamera').inputValue(),'wide');assert.equal(await page.locator('#visualQuality').inputValue(),'low');assert(!(await page.locator('#visualGuide').isChecked()));

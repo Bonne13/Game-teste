@@ -1,7 +1,7 @@
 'use strict';
 const $=id=>document.getElementById(id),canvas=$('pitch'),matchView=new Football3D(canvas,false);
 const initial={name:'Alex Silva',energy:100,skill:45,rep:0,money:150,matches:0,goals:0,wins:0,points:0};
-let p={...initial};try{const saved=JSON.parse(localStorage.getItem('proxima-estrela-v1'));if(saved&&Object.keys(initial).every(k=>typeof saved[k]===typeof initial[k]))p={...initial,...saved};}catch{}
+let p={...initial};try{const saved=(typeof CareerSaves!=='undefined'&&CareerSaves.current())||JSON.parse(localStorage.getItem('proxima-estrela-v1'));if(saved&&Object.keys(initial).every(k=>typeof saved[k]===typeof initial[k]))p={...initial,...saved};}catch{}
 p.assists=Number.isFinite(p.assists)?p.assists:0;
 let active=false,chances=0,home=0,away=0,keeper=440,last=0,matchPlan=null,timeline=null,matchPerformance={goals:0,assists:0,scorers:{}};
 if(!Object.hasOwn(MATCH_INTENSITIES,p.intensity))p.intensity='moderate';
@@ -11,7 +11,7 @@ function refreshMatchSetup(){const plan=active?matchPlan:selectedMatchPlan();$('
 $('matchIntensity').onchange=()=>{if(active||isTraining()){$('matchIntensity').value=p.intensity;return;}p.intensity=Object.hasOwn(MATCH_INTENSITIES,$('matchIntensity').value)?$('matchIntensity').value:'moderate';save();refresh();};
 let isTraining=()=>false;
 let competition=p.competition;
-if(!competition||!LEAGUES.some(l=>l.id===competition.leagueId&&(p.world?.membership?.[l.id]||l.teams).includes(competition.club))||!Array.isArray(competition.results))competition=newCompetition('eng','Arsenal');
+if(!competition||!LEAGUES.some(l=>l.id===competition.leagueId&&(p.world?.membership?.[l.id]||l.teams).includes(competition.club))||!Array.isArray(competition.results))competition=newCompetition(LEAGUES.some(l=>l.id===p.startingLeague)?p.startingLeague:'eng',(LEAGUES.find(l=>l.id===p.startingLeague)||LEAGUES[0]).teams[0]);
 p.competition=competition;
 prepareWorld(p);competition=p.competition;prepareEconomy(p,competition);
 let playedFixture=null;
@@ -33,7 +33,7 @@ for(const id of ['leagueSelect','joinLeague'])$(id).disabled=active||isTraining(
 $('play').textContent=finished?'Iniciar nova temporada →':competition.round?'Próxima partida →':'Jogar partida →';
 }
 function finishRound(){const games=schedule()[competition.round].map(([host,guest])=>{const own=host===competition.club||guest===competition.club;return{host,guest,hg:own?(host===competition.club?home:away):Math.floor(Math.random()*4),ag:own?(host===competition.club?away:home):Math.floor(Math.random()*4)};});competition.results.push(games);competition.round++;advanceParallelLeague(p);if(competition.round===schedule().length){const report=prepareSeasonReport(p);prepareSeasonAwards(p,report);}}
-function save(){try{localStorage.setItem('proxima-estrela-v1',JSON.stringify(p));}catch{ $('toast').textContent='Salvamento indisponível neste navegador.';}}
+function save(){try{localStorage.setItem('proxima-estrela-v1',JSON.stringify(p));if(typeof CareerSaves!=='undefined')CareerSaves.persist(p);return true;}catch{ $('toast').textContent='Salvamento indisponível neste navegador.';return false;}}
 function refresh(){for(const k of ['energy','skill']){$(k).textContent=p[k]+' / 100';$(k+'bar').style.width=p[k]+'%';}$('rep').textContent=p.rep+' ★';$('money').textContent='R$ '+p.money;$('round').textContent=currentLeague().name+' · RODADA '+Math.min(competition.round+1,schedule().length);$('season').textContent=p.goals+' gols em '+p.matches+' jogos';$('record').textContent=p.wins+' vitórias · '+p.points+' pontos conquistados';$('score').textContent=`${competition.club} ${home} : ${away} ${playedFixture?playedFixture.find(c=>c!==competition.club):'—'}`;$('play').disabled=active||isTraining()||!hasClubContract(p)||p.energy<selectedMatchPlan().energyCost;$('train').disabled=active||isTraining();$('rest').disabled=active||isTraining()||p.energy>=100;for(const button of $('drillButtons').children)button.disabled=active||isTraining();refreshLeague();refreshMatchSetup();refreshRecoveryShop();refreshMatchClock();refreshCareerUI();refreshNavigation();refreshLeagueHub();if(typeof refreshMobileUI==='function')refreshMobileUI();}
 $('name').value=p.name;$('name').onchange=()=>{p.name=$('name').value.trim()||'Alex Silva';$('name').value=p.name;save();};
 $('train').onclick=()=>{openMainView('train');$('trainingPanel').scrollIntoView({behavior:'smooth'});};
@@ -53,7 +53,7 @@ function setupMatch3DInput(){wireMatchShot(matchView,{
  start:()=>{const window=AIR_WINDOWS[situation.mode];if(window){const duration=.6/(.8+effectiveSkills(p).shoot/100*.2)*1.25;situation.time=(((window[0]+window[1])/2*2.4-duration)%2.4+2.4)%2.4;}},
  aim:point=>{situation.aim=point;},
  change:(sample,charging)=>{if(!situation)return;const box=matchView.rect(),liftOffset=['pass','corner'].includes(situation.mode)?0:sample.lift*(box.bottom-box.top)*.2;situation.contactCurve=sample.curve;const original=situation.aim;situation.aim={x:original.x,y:original.y-liftOffset};situation.preview=situation.endpoint(charging?sample.power:situation.mode==='pass'?.55:situation.mode==='corner'?.65:AIR_WINDOWS[situation.mode]?.6:situation.shotProfile.ideal);situation.aim=original;situation.contactLift=liftOffset;$('matchContactInfo').textContent='Força do jogador '+Math.round(effectiveSkills(p).shoot)+'/100 · Altura '+Math.round(sample.lift*100)+'% · Curva '+Math.round(sample.curve*100)+'% · Segure para carregar';},
- release:sample=>{if(active&&situation&&!situation.busy){situation.aim.y-=situation.contactLift||0;situation.strike(sample.power,sample.curve);}},
+ release:sample=>{if(active&&situation&&!situation.busy){situation.aim.y-=situation.contactLift||0;situation.strike(sample.power,sample.curve);if(typeof GameAudio!=='undefined')GameAudio.play('kick');}},
  onFieldDown:e=>{if(!active||!situation||situation.busy)return true;if(positioning){const point=matchView.groundAt(e);if(point)situation.order(Number($('commandPlayer').value),point);return true;}return false;}
  });}
 

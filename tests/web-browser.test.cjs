@@ -1,7 +1,7 @@
 const {chromium}=require('playwright'),assert=require('node:assert/strict');
 (async()=>{const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});try{
  const context=await browser.newContext({viewport:{width:393,height:851},deviceScaleFactor:2,isMobile:true,hasTouch:true}),page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));const url=process.env.WEB_URL||'http://127.0.0.1:8004/web/';
- await page.goto(url);await page.locator('#mobileHUD').waitFor();await page.waitForFunction(()=>!!navigator.serviceWorker.controller,null,{timeout:20000});assert.match(await page.locator('#webAvailability').innerText(),/offline/);
+ await require('./game-page.cjs')(page);await page.goto(url);await page.locator('#mobileHUD').waitFor();await page.waitForFunction(()=>!!navigator.serviceWorker.controller,null,{timeout:20000});assert.match(await page.locator('#webAvailability').innerText(),/offline/);
  const scope=await page.evaluate(async()=>{const r=await navigator.serviceWorker.ready;return r.scope;});assert(scope.endsWith('/web/'));
  assert(await page.locator('#mobileHUD').isVisible());assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
  await page.locator('#mobileHUD summary').tap();await page.locator('#mobileName').fill('Carreira Web');await page.locator('#mobileName').dispatchEvent('change');
