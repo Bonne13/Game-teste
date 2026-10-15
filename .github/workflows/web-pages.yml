@@ -1,0 +1,49 @@
+name: Publicar jogo no navegador
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '*.js'
+      - '*.css'
+      - 'index.html'
+      - 'vendor/**'
+      - 'data/**'
+      - 'web/**'
+      - 'tools/build-web.py'
+      - 'tests/web-*'
+      - '.github/workflows/web-pages.yml'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Testar controles e regras
+        run: |
+          for test in training match match-input drag economy world; do
+            node "tests/$test.test.cjs" || exit 1
+          done
+      - name: Preparar site e verificar arquivos
+        run: |
+          python3 tools/build-web.py
+          python3 tests/web-package.test.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/web
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

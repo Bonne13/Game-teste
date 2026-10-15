@@ -1,5 +1,13 @@
 # Próxima Estrela
 
+## Jogar pelo navegador do celular
+
+Versão web preparada para Safari/iPhone e Chrome/Android, com controles por toque e suporte offline após o primeiro carregamento. Não precisa de APK nem de conta Apple Developer.
+
+**Endereço previsto após a publicação:** https://bonne13.github.io/Game-teste/
+
+A publicação usa GitHub Pages. A ativação e a disponibilidade pública ainda precisam ser confirmadas na sua conta; veja [como ativar e jogar](docs/NAVEGADOR.md).
+
 ## Testar no Android, sem pagar
 
 **[Baixar APK de teste para Android](https://github.com/Bonne13/Game-teste/blob/main/downloads/ProximaEstrela-Android-teste.apk)** — abra o link no celular, toque em **Download raw**, abra o arquivo e autorize a instalação pelo navegador se o Android solicitar. Não precisa de conta Google Play.
