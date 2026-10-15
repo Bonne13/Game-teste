@@ -125,3 +125,5 @@ O script incorpora os arquivos públicos, testa o servidor e gera EXE/ZIP em `di
 Atualização do navegador v0.4.3: se uma aba manteve controles antigos, depois da publicação abra `https://bonne13.github.io/Game-teste/?atualizar=mira-pausada`. O worker atualizado recarrega somente a aba que pediu recuperação e preserva o armazenamento da carreira. As demais abas não são recarregadas automaticamente.
 
 Correção web v0.4.4: mira com retículo visível desde o toque no campo e bola ampliada 3D renderizada pelo mesmo contexto WebGL do campo. Evita criar dois contextos gráficos extras no celular. O teste móvel verifica pixels claros/escuros da bola, pausa e novo gesto antes de finalizar.
+
+Treinos v0.4.5: o retículo e uma mira inicial aparecem ao começar cada tentativa. O botão Preparar chute · abrir bola abre a preparação mesmo sem tocar no campo; o toque no campo continua disponível. A preparação usa leitura direta dos pixels 3D para evitar depender da cópia entre superfícies gráficas do navegador. A versão fica no topo da tela.
