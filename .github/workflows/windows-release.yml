@@ -1,0 +1,48 @@
+name: Publicar jogo para Windows
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.2'
+          cache: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Testar regras do jogo
+        shell: pwsh
+        run: |
+          $tests = @('economy', 'leagues', 'training', 'match', 'match-rules', 'recovery', 'timeline')
+          foreach ($test in $tests) {
+            node "tests/$test.test.cjs"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+      - name: Compilar e empacotar
+        shell: pwsh
+        env:
+          GO_BINARY: go
+        run: python tools/build-desktop.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProximaEstrela-Windows-x64
+          path: dist/ProximaEstrela-Windows-x64.zip
+      - name: Publicar Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/ProximaEstrela-Windows-x64.zip
+            dist/ProximaEstrela-Windows-x64.exe
+          body: |
+            Versão de teste para Windows 10/11 de 64 bits.
+            Baixe o ZIP, extraia e execute ProximaEstrela-Windows-x64.exe.
+            O iniciador abre o jogo no navegador, sem instalação de Python ou Node.js.
+            Mantenha a janela do iniciador aberta enquanto joga; Enter encerra o jogo.
