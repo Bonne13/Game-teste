@@ -6,9 +6,9 @@ function wireMatchShot(view,options){
  const field=view.canvas,ball=view.contactCanvas;let phase='aim',hold=null,pointer=null,context=null,mode=null;
  const setPhase=value=>{phase=value;view.shotPhase=value;view.preparingShot=value==='contact'||value==='charging';view.charging=value==='charging';view.showShotPreparation?.(view.preparingShot);};
  const clearHold=()=>{hold=null;view.dragPower=0;};
- const reset=()=>{clearHold();pointer=null;view.aiming=false;setPhase('aim');};
+ const reset=()=>{clearHold();pointer=null;view.aiming=false;view.setAimPoint?.(null);setPhase('aim');};
  const cancel=()=>{clearHold();pointer=null;if(phase==='charging')setPhase('contact');};
- const aim=e=>{const point=['pass','corner'].includes(options.mode())?view.groundAt(e):view.goalAt(e);if(point)options.aim(point);};
+ const aim=e=>{const point=['pass','corner'].includes(options.mode())?view.groundAt(e):view.goalAt(e);if(point){options.aim(point);view.aimGround=['pass','corner'].includes(options.mode());view.setAimPoint?.(point);}};
  const sample=()=>({power:heldShotPower(hold?performance.now()-hold.started:0,options.strength()),curve:-view.contact.x,lift:-view.contact.y});
  const update=()=>{
   if(!options.ready()){if(phase!=='aim'&&phase!=='flight')reset();return;}
@@ -32,7 +32,7 @@ function wireMatchShot(view,options){
  ball.onpointermove=e=>{if(hold?.pointer===e.pointerId)update();};
  ball.onpointerup=e=>{
   if(!hold||hold.pointer!==e.pointerId)return;const value=sample(),valid=options.ready()&&performance.now()-hold.started>=120&&value.power>.025;clearHold();
-  if(valid){setPhase('flight');options.change(value,true);options.release(value);}else setPhase('contact');
+  if(valid){view.setAimPoint?.(null);setPhase('flight');options.change(value,true);options.release(value);}else setPhase('contact');
  };
  ball.onpointercancel=e=>{if(hold?.pointer===e.pointerId)cancel();};ball.onlostpointercapture=()=>{if(hold)cancel();};
  if(options.button)options.button.onclick=()=>{update();if(options.ready()&&phase==='aim'){setPhase('contact');update();}};

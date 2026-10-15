@@ -19,3 +19,5 @@
 @media(max-width:850px) and (orientation:landscape){.hero{display:none}#mobileHUD{margin-top:8px}#mobileHUD details{display:none}#pitch,#trainingCanvas{height:68svh;min-height:230px}.contact-control p{max-width:none}header>.sub{display:none}}
 
 @media(max-width:850px){.shot-preparation .contact-ball{width:210px;height:210px;flex:0 0 210px}.shot-preparation{padding:14px}.shot-preparation .btn{width:100%}.shot-preparation .contact-control{gap:8px}}
+
+.shot-aim-marker{position:absolute;z-index:2;width:28px;height:28px;border:2px solid #fff;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 2px #142319,0 0 12px #d3fa6a;pointer-events:none}.shot-aim-marker::before,.shot-aim-marker::after{content:"";position:absolute;background:#d3fa6a;left:50%;top:50%;transform:translate(-50%,-50%)}.shot-aim-marker::before{width:38px;height:2px}.shot-aim-marker::after{height:38px;width:2px}.shot-aim-marker i{position:absolute;inset:9px;border-radius:50%;background:#fff}.shot-aim-marker[hidden]{display:none}
