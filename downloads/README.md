@@ -1,4 +1,4 @@
-# Jogar no Windows — v0.8.0
+# Jogar no Windows — v0.9.0
 
 [Baixar ProximaEstrela-Windows-x64.zip](https://github.com/Bonne13/Game-teste/raw/refs/heads/main/downloads/ProximaEstrela-Windows-x64.zip)
 

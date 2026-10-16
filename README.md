@@ -1,3 +1,19 @@
+# Jogabilidade e campo — v0.9.0
+
+[Jogar no navegador](https://bonne13.github.io/Game-teste/?atualizar=mira-pausada) · [Windows x64](https://github.com/Bonne13/Game-teste/raw/refs/heads/main/downloads/ProximaEstrela-Windows-x64.zip)
+
+As chances agora variam entre onze jogadas, sem repetir um tipo no mesmo sorteio de até onze oportunidades. Há drible, condução e cruzamento, além dos chutes, passes e bolas paradas. As jogadas começam em posições distintas do campo. O número de oportunidades ainda depende do nível, intensidade e espaço conquistado com o treinador.
+
+- **Passes e cruzamentos:** começam também no meio-campo e nas pontas. O companheiro domina, avança e finaliza; sua qualidade influencia o acerto. Um gol dessa sequência registra assistência, sem atribuir o gol ao protagonista. Interceptação, marcação e impedimento continuam ativos.
+- **Drible e condução:** toque/segure no campo e deslize lateralmente, ou use A/D e setas. O jogador avança com adversários perseguindo e tentando desarmar. Ao escapar, a oportunidade vira finalização e exige um novo gesto. A câmera acompanha por trás.
+- **Treino de técnica:** começa no meio-campo, com percurso, cones e perseguidores, acompanhado pela câmera. As faltas do treino também variam de posição, sempre fora da área.
+- **Faltas e escanteios:** faltas em quatro posições fora da área e barreira a 9,15 m. Escanteios nos cantos reais do gramado e cruzamentos pelas duas pontas.
+- **Comandos e imagem:** arrasto mais curto, alcance ajustado à jogada, potência visível dentro do campo, câmera mostrando bola e mais gramado, voo mais longo para bolas distantes, sombras suaves, novas cores do gramado e placar no estádio. Mantidos os níveis gráficos e a torcida instanciada.
+
+Verificação específica: `node tests/opportunities.test.cjs` e `GAME_URL=http://127.0.0.1:8014/ node tests/polish-browser.test.cjs`. O teste de navegador cobre gesto móvel, câmera, soltura sem chute acidental, passe com assistência e enquadramento da bola em faltas/cruzamentos/escanteios. Também foram conferidos os modelos anteriores e o pacote offline/Windows.
+
+---
+
 # Atualização de carreira — v0.8.0
 
 [Jogar no navegador](https://bonne13.github.io/Game-teste/?atualizar=mira-pausada) · [Baixar para Windows x64](https://github.com/Bonne13/Game-teste/raw/refs/heads/main/downloads/ProximaEstrela-Windows-x64.zip)
