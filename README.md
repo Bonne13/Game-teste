@@ -1,3 +1,9 @@
+# Carreira e estádio — v0.10.0
+
+A partida abre em uma tela exclusiva, com retorno à carreira ao final. O menu de preparação mantém confronto, identidade do jogador e intensidade. O overall combina as sete habilidades com pesos por posição e bônus da chuteira, sem depender da energia.
+
+Os seis saves podem ser excluídos individualmente com confirmação; abas antigas não podem recriar uma carreira excluída. O estádio tem ocupação por divisão e aproveitamento do clube na liga, com movimento da torcida e reação aos gols. A qualidade baixa desativa os espectadores para economizar processamento.
+
 # Jogabilidade e campo — v0.9.0
 
 [Jogar no navegador](https://bonne13.github.io/Game-teste/?atualizar=mira-pausada) · [Windows x64](https://github.com/Bonne13/Game-teste/raw/refs/heads/main/downloads/ProximaEstrela-Windows-x64.zip)

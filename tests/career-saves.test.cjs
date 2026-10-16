@@ -1,5 +1,5 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
-const data=new Map(),context=vm.createContext({Intl,Date,console,localStorage:{getItem:k=>data.get(k)||null,setItem:(k,v)=>data.set(k,v)}});
+const data=new Map(),context=vm.createContext({Intl,Date,console,localStorage:{getItem:k=>data.get(k)||null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)}});
 vm.runInContext(fs.readFileSync('nationalities.js','utf8')+'\n'+fs.readFileSync('career-saves.js','utf8')+'\n'+fs.readFileSync('audio.js','utf8')+'\nglobalThis.api={CareerSaves,NATIONALITIES,PLAYER_POSITIONS,GameAudio,CAREER_ACHIEVEMENTS};const LEAGUES=[{id:"eng"},{id:"bra2"}];',context);
 const {CareerSaves:s,NATIONALITIES:n,GameAudio:audio}=context.api;
 assert.equal(n.length,220);assert.equal(n.filter(n=>n.fifa).length,211);assert.equal(n.filter(n=>n.un==='member').length,193);assert.equal(n.filter(n=>n.un==='observer').length,2);assert.equal(new Set(n.map(n=>n.id)).size,220);
@@ -15,5 +15,7 @@ audio.set({volume:.23,muted:true});assert.equal(audio.get().volume,.23);assert.e
 const gains=[];context.window={AudioContext:class{constructor(){this.currentTime=0;this.state='running';}createGain(){return{gain:{setValueAtTime:v=>gains.push(v)},connect(){}}}}};
 audio.play('kick');assert.equal(gains.at(-1),0);audio.set({muted:false,volume:.42});assert.equal(gains.at(-1),.42);audio.set({muted:true});assert.equal(gains.at(-1),0);
 assert(context.api.CAREER_ACHIEVEMENTS.find(a=>a.id==='goal').earned({goals:1}));assert(!context.api.CAREER_ACHIEVEMENTS.find(a=>a.id==='ballon').earned({awardHistory:[]}));
+// Deleting must preserve other careers and reject writes from an older open tab.
+s.remove(0);assert.equal(s.read().slots[0],null);assert.throws(()=>s.persist(first),/excluída/);s.activate(0,fresh);assert.throws(()=>s.persist(first),/excluída/);assert.equal(s.read().slots[1].player.goals,9);s.remove(0);s.remove(1);assert.equal(data.has('proxima-estrela-v1'),false);assert.equal(s.read().slots.filter(Boolean).length,0);
 const before=data.get('proxima-estrela-v1');data.set('proxima-carreiras-v1','invalid');assert.throws(()=>s.read());assert.equal(data.get('proxima-estrela-v1'),before);
 console.log('PASS: 220 opções, 211 FIFA, 193 ONU e 2 observadores, seis saves isolados, migração integral, validação, dados inválidos preservados, conquistas e áudio.');
