@@ -12,7 +12,7 @@ const CareerSaves=(()=>{
   // Commit the bank first; never erase the previous career if storage is full.
   bank.active=index;bank.slots[index]={player:selected,updatedAt:new Date().toISOString()};localStorage.setItem(KEY,JSON.stringify(bank));localStorage.setItem(LEGACY,JSON.stringify(selected));return selected;
  }
- function create(profile){if(!NATIONALITIES.some(n=>n.id===profile.nationality)||!LEAGUES.some(l=>l.id===profile.startingLeague)||!PLAYER_POSITIONS.some(p=>p.id===profile.position))throw Error('Escolha nacionalidade, liga e posição válidas.');return{name:profile.name.trim().slice(0,24)||'Alex Silva',nationality:profile.nationality,position:profile.position,startingLeague:profile.startingLeague,energy:100,skill:45,rep:0,money:150,matches:0,goals:0,wins:0,points:0};}
+ function create(profile){if(!NATIONALITIES.some(n=>n.id===profile.nationality)||!LEAGUES.some(l=>l.id===profile.startingLeague)||!PLAYER_POSITIONS.some(p=>p.id===profile.position))throw Error('Escolha nacionalidade, liga e posição válidas.');return{name:profile.name.trim().slice(0,24)||'Alex Silva',nationality:profile.nationality,position:profile.position,startingLeague:profile.startingLeague,birthDate:'2010-01-01',careerStart:'2026-01-01',energy:100,skill:45,rep:0,money:150,matches:0,goals:0,wins:0,points:0};}
  function bind(slot){if(!Number.isInteger(slot)||!valid(read().slots[slot]?.player))throw Error('Escolha uma carreira válida.');playingSlot=slot;}
  function current(){return playingSlot===null?null:read().slots[playingSlot]?.player;}
  return{read,persist,activate,create,bind,current,COUNT};

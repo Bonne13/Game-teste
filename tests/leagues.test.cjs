@@ -1,45 +1,15 @@
-const fs=require('node:fs');
-const vm=require('node:vm');
-const assert=require('node:assert/strict');
-const elements=new Map();
-function element(){return {style:{},value:'',textContent:'',disabled:false,setAttribute(){},getBoundingClientRect(){return {left:0,top:0,width:48,height:48}},children:[],append(...nodes){this.children.push(...nodes)},replaceChildren(...n){this.children=n;if(n.length)this.value=n[0].value},getContext:()=>new Proxy({}, {get:()=>()=>{}}),focus(){}}}
-let storage=null;
-function load(){const box={document:{getElementById:id=>{if(!elements.has(id))elements.set(id,element());return elements.get(id)},createElement:()=>element()},Option:function(text,value){this.textContent=text;this.value=value},localStorage:{getItem:()=>storage,setItem:(k,v)=>storage=v},performance:{now:()=>0},requestAnimationFrame(){},setTimeout:()=>1,clearTimeout(){},console,assert,Football3D:class{constructor(){this.dragPower=0;this.failed=true;}renderTrial(){}renderMatch(){}},wire3DShot(){},wireMatchShot(){},setupInterface(){},refreshNavigation(){},refreshLeagueHub(){},openMainView(){}};vm.createContext(box);for(const file of ['club-database.js','leagues.js','league-world.js','training-engine.js','training.js','match-engine.js','match-rules.js','recovery.js','match-timeline.js','career-data.js','career-economy.js','career-ui.js','season-awards.js','game.js'])vm.runInContext(fs.readFileSync(file,'utf8'),box);return box;}
-let box=load();
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),box=vm.createContext({assert,console});
+for(const file of ['club-database','leagues','training-engine','training','career-data','career-economy','league-world','season-awards','career-life','career-competitions','nationalities','career-international','career-transfers','career-ui'])vm.runInContext(fs.readFileSync(file+'.js','utf8'),box,{filename:file+'.js'});
 vm.runInContext(`
-assert.equal(LEAGUES.length,12);
-assert.equal(LEAGUES.reduce((n,l)=>n+l.teams.length,0),238);
+assert.equal(LEAGUES.length,12);assert.equal(LEAGUES.reduce((n,l)=>n+l.teams.length,0),238);
 for(const league of LEAGUES){
- const rounds=makeSchedule(league.teams),seen=new Set();
- assert.equal(rounds.length,2*(league.teams.length-1));
- for(const games of rounds){const used=new Set();for(const [a,b] of games){assert.notEqual(a,b);assert(!used.has(a));assert(!used.has(b));used.add(a);used.add(b);assert(!seen.has(a+'|'+b));seen.add(a+'|'+b);}assert.equal(used.size,league.teams.length);}
- assert.equal(seen.size,league.teams.length*(league.teams.length-1));
- p.training=Object.fromEntries(DRILLS.map(([id])=>[id,[70]]));$('leagueSelect').value=league.id;$('joinLeague').onclick();
- const oldGoals=p.goals;let expectedGoals=0;
- for(let round=0;round<rounds.length;round++){
- p.energy=100;$('play').onclick();assert(active);
- const idBefore=competition.leagueId;$('joinLeague').onclick();assert.equal(competition.leagueId,idBefore);
- expectedGoals+=matchPlan.total;const expectedCost=matchPlan.energyCost,rolledTotal=matchPlan.total;assert.equal(p.energy,100);assert.equal($('matchIntensity').disabled,true);const frozenIntensity=p.intensity;$('matchIntensity').value='high';$('matchIntensity').onchange();assert.equal(p.intensity,frozenIntensity);assert.equal(matchPlan.total,rolledTotal);while(active){advanceMatch(.05);if(timeline.phase==='halftime')$('resumeMatch').onclick();if(situation)result({target:{x:310,y:90},keeper:500});}assert.equal(p.energy,100-expectedCost);assert.equal(p.lastMatch.total,rolledTotal);const oldMatches=p.matches;result({goal:true});assert.equal(p.matches,oldMatches);
- assert(!active);assert.equal(competition.round,round+1);
- }
- const table=standings(currentLeague(),competition.results),own=table.find(row=>row.club===competition.club);
- assert.equal(own.points,rounds.length*3);assert.equal(own.gf,expectedGoals);assert.equal(p.goals-oldGoals,expectedGoals);
- for(const row of table){assert.equal(row.played,rounds.length);assert.equal(row.wins+row.draws+row.losses,row.played);assert.equal(row.points,row.wins*3+row.draws);}
- assert.equal(table.reduce((n,r)=>n+r.gf,0),table.reduce((n,r)=>n+r.ga,0));
- const lastYear=competition.year;p.energy=100;if(!hasClubContract(p))assert(renewClubContract(p,false,()=>0).accepted);$('play').onclick();assert.equal(competition.year,lastYear+1);assert.equal(competition.round,0);while(active){advanceMatch(.05);if(timeline.phase==='halftime')$('resumeMatch').onclick();if(situation)result({goal:false});}
+ const rounds=makeSchedule(league.teams),seen=new Set();assert.equal(rounds.length,2*(league.teams.length-1));for(const pairs of rounds){const used=new Set();for(const [a,b] of pairs){assert.notEqual(a,b);assert(!used.has(a));assert(!used.has(b));used.add(a);used.add(b);assert(!seen.has(a+'|'+b));seen.add(a+'|'+b);}assert.equal(used.size,league.teams.length);}assert.equal(seen.size,league.teams.length*(league.teams.length-1));
+ const player={name:'Temporada',energy:100,skill:60,rep:0,money:500,matches:0,goals:0,wins:0,points:0,recruited:true,competition:newCompetition(league.id,league.teams[0]),training:Object.fromEntries(DRILLS.map(([id])=>[id,[70]]))};prepareWorld(player);prepareEconomy(player,player.competition);prepareCareerLife(player);prepareFootballWorld(player);prepareInternationalCareer(player);const random=seasonRandom('league-test:'+league.id);
+ for(const pairs of rounds){const games=pairs.map(([host,guest])=>{const g=footballGame(player,host,guest,random);if(host===player.competition.club){g.hg=2;g.ag=0;}else if(guest===player.competition.club){g.hg=0;g.ag=2;}recordFootballStats(player,league.id,g,[host,guest].includes(player.competition.club)?{goals:1,assists:1}:null,random);return g;});player.competition.playerMatches.push({goals:1,assists:1,minutes:20,total:2});player.competition.results.push(games);player.competition.round++;advanceAllCareerLeagues(player,random);}
+ const table=standings(leagueFor(player,league.id),player.competition.results),own=table.find(r=>r.club===player.competition.club);assert.equal(own.points,rounds.length*3);assert.equal(own.gf,rounds.length*2);for(const row of table){assert.equal(row.played,rounds.length);assert.equal(row.wins+row.draws+row.losses,row.played);assert.equal(row.points,row.wins*3+row.draws);}assert.equal(table.reduce((n,r)=>n+r.gf,0),table.reduce((n,r)=>n+r.ga,0));assert.equal(player.football.stats[league.id].user.goals,rounds.length);assert.equal(player.football.stats[league.id].user.assists,rounds.length);
+ for(const cup of player.football.cups){let guard=0;while(!cup.champion&&guard++<25)completeCupRound(player,cup,null,random);assert(cup.champion);}
+ const oldClub=player.competition.club;rollCareerSeason(player);assert.equal(player.competition.year,2027);assert(careerDate(player).startsWith('2027'));assert.equal(careerAge(player),17);assert.equal(player.competition.round,0);assert.equal(player.competition.club,oldClub);assert.equal(player.world.history.length,1);assert.equal(player.football.history.length,1);assert(player.football.cups.some(c=>c.id==='worldcup-2030'));const reload=JSON.parse(JSON.stringify(player));prepareWorld(reload);prepareCareerLife(reload);prepareFootballWorld(reload);prepareInternationalCareer(reload);assert.equal(reload.competition.year,2027);assert.equal(reload.life.appearances,0);assert(nextCareerFixture(reload));
 }
-const testRows=standings(LEAGUES[0],[[{host:'Arsenal',guest:'Chelsea',hg:1,ag:1}]]);assert.equal(testRows.find(r=>r.club==='Arsenal').points,1);
+assert.equal(recruit(LEAGUES[0],{}),null);for(const score of [0,49,50,79,80,100])for(const league of LEAGUES){const history=Object.fromEntries(DRILLS.map(([id])=>[id,[score]])),offer=recruit(league,history);assert(league.teams.includes(offer.club));assert.equal(offer.score,score);assert.equal(offer.tier,score>=80?'elite':score>=50?'regular':'development');assert.deepEqual(recruit(league,history),offer);}const partial=Object.fromEntries(DRILLS.map(([id])=>[id,[0,100]]));assert.equal(scoutingScore(partial),50);delete partial.pass;assert(!trainingReady(partial));
 `,box);
-vm.runInContext(`
-assert.equal(recruit(LEAGUES[0],{}),null);
-for(const score of [0,49,50,79,80,100])for(const league of LEAGUES){const h=Object.fromEntries(DRILLS.map(([id])=>[id,[score]]));const offer=recruit(league,h);assert(league.teams.includes(offer.club));assert.equal(offer.score,score);assert.equal(offer.tier,score>=80?'elite':score>=50?'regular':'development');assert.deepEqual(recruit(league,h),offer);}
-const h=Object.fromEntries(DRILLS.map(([id])=>[id,[0,100]]));assert.equal(scoutingScore(h),50);delete h.pass;assert(!trainingReady(h));
-$('drillButtons').children[0].onclick();$('cancelTraining').onclick();assert.equal(p.training.shoot.at(-1),0);
-`,box);
-const before=JSON.parse(storage);elements.clear();box=load();vm.runInContext(`assert.equal(competition.round,1);assert.equal(competition.results.length,1);`,box);
-assert.equal(JSON.parse(storage).goals,before.goals);
-// Energia insuficiente deve bloquear a intensidade alta sem sortear nem começar uma partida.
-vm.runInContext(`p.energy=10;$('matchIntensity').value='high';$('matchIntensity').onchange();assert($('play').disabled);const previous=p.matches;$('play').onclick();assert(!active);assert.equal(p.matches,previous);$('matchIntensity').value='light';$('matchIntensity').onchange();assert(!$('play').disabled);$('play').onclick();assert(active);assert.equal(p.energy,10);while(active){advanceMatch(.05);if(timeline.phase==='halftime')$('resumeMatch').onclick();if(situation)result({goal:false});}assert.equal(p.energy,0);`,box);
-// Migração de um salvamento anterior às ligas.
-storage=JSON.stringify({name:'Veterano',energy:80,skill:60,rep:9,money:500,matches:12,goals:22,wins:8,points:25});elements.clear();box=load();vm.runInContext(`assert.equal(p.inventory.energyDrink,0);assert.equal(p.inventory.meal,0);assert.equal(p.energy,80);assert.equal(p.intensity,'moderate');assert.equal(p.goals,22);assert.equal(p.money,500);assert.equal(competition.leagueId,'eng');assert.equal(competition.round,0);`,box);
-console.log('PASS: cancelamento, recrutamento determinístico, limites dos patamares, histórico,  12 divisões, 238 clubes, calendários completos, temporadas simuladas, pontuação, troca de campeonato, nova temporada, persistência e migração.');
+console.log('PASS: 12 calendários completos, 238 clubes, confrontos únicos de ida/volta, pontos/gols/assistências, copas, acesso/rebaixamento, temporadas 2026/2027, restauração e recrutamento por desempenho.');

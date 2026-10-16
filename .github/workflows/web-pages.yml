@@ -33,7 +33,7 @@ jobs:
           node-version: '22'
       - name: Testar controles e regras
         run: |
-          for test in training match match-input drag economy world career-saves vision-offside; do
+          for test in training match match-input drag economy world career-saves vision-offside career-life international; do
             node "tests/$test.test.cjs" || exit 1
           done
       - name: Preparar site e verificar arquivos

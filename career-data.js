@@ -1,6 +1,6 @@
 'use strict';
 const SHOP_CATEGORIES={recovery:'Recuperação',houses:'Casas',vehicles:'Veículos',furniture:'Mobílias',personal:'Itens pessoais',boots:'Chuteiras'};
-const CAREER_SKILLS={shoot:'Chute',vision:'Visão',pass:'Passe',speed:'Velocidade',technique:'Técnica',freekick:'Tiro livre'};
+const CAREER_SKILLS={shoot:'Chute',vision:'Visão',pass:'Passe',speed:'Velocidade',technique:'Técnica',freekick:'Tiro livre',accuracy:'Precisão'};
 // Marcas, modelos, empresas e profissionais fictícios deste jogo.
 const CAREER_CATALOG=[
  {id:'home-loft',category:'houses',name:'Loft Primeiro Passo',price:90000,icon:'🏠',slots:2,rest:4,prestige:1},

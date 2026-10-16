@@ -22,7 +22,8 @@ readme='''PROXIMA ESTRELA - WINDOWS 10/11 DE 64 BITS
 
 1. Extraia todos os arquivos do ZIP.
 2. De dois cliques em ProximaEstrela-Windows-x64.exe.
-3. O jogo abre automaticamente no seu navegador padrao.
+3. No Windows com Microsoft Edge, o jogo abre em janela de aplicativo.
+   Sem Edge, o iniciador usa seu navegador padrao.
 4. Mantenha a janela do iniciador aberta enquanto joga.
 5. Para encerrar, volte ao iniciador e pressione Enter.
 

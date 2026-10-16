@@ -1,3 +1,40 @@
+# Atualização de carreira — v0.8.0
+
+[Jogar no navegador](https://bonne13.github.io/Game-teste/?atualizar=mira-pausada) · [Baixar para Windows x64](https://github.com/Bonne13/Game-teste/raw/refs/heads/main/downloads/ProximaEstrela-Windows-x64.zip)
+
+Esta versão substitui a escolha livre de fundamentos por uma avaliação em sequência: chute, visão, passe, velocidade, técnica e tiro livre, com três tentativas e três estrelas em cada um. Um erro remove uma estrela. A sequência retoma o primeiro fundamento pendente e define automaticamente o primeiro clube. A evolução dos sete atributos, incluindo precisão, usa pontos recebidos nas partidas e ao subir de nível, sem aumentar atributos por repetir a avaliação.
+
+A carreira começa em 01/01/2026, aos 16 anos, na reserva. Confiança do treinador determina minutos e oportunidades; relações com equipe e imprensa são persistentes. O treino de força começa próximo da marca do pênalti e recua conforme o atributo sobe. A velocidade agora é uma corrida 3D de reação e desvio em três faixas, inspirada em minijogos de futebol, com controles de toque ou A/D/setas.
+
+O menu organiza Hoje, Meu jogador, Minha equipe, Mundo, Seleção, Jornal, Calendário, Fundamentos e Loja. As doze ligas têm tabelas, artilharia e assistências durante a temporada. O mercado inclui janelas, propostas aceitas/recusadas, taxas, orçamento dos clubes, contratos de atletas, transferências entre equipes, indicação de reforços/vendas e ofertas para o protagonista. Elencos e força coletiva mudam com as negociações e ficam separados por save.
+
+Há copas nacionais dos seis países das ligas, nove torneios nacionais sul-americanos simulados, os 27 estaduais brasileiros, Champions League, Europa League, Conference League, Libertadores e Sudamericana. **Os participantes, a classificação e os formatos são adaptados para este protótipo; não são reprodução integral dos regulamentos/calendários oficiais.** As equipes de ligas não cadastradas têm força coletiva simulada; não possuem todos os elencos reais cadastrados.
+
+As 211 associações FIFA estão no sistema de seleções. A Copa do Mundo segue o ciclo 2026/2030, com 48 países, 12 grupos, dois primeiros mais oito terceiros e mata-mata de 32. Eliminatórias e sorteio são simulados. A convocação exige forma recente, nível, desempenho, reputação e disponibilidade médica; a referência varia conforme a concorrência da seleção. Um convocado joga os eventos pelo mesmo controle de arrasto, recebe partidas/gols/assistências internacionais e pode ganhar o título. Há também amistosos no calendário. O elenco nominal das seleções é parcial, identificado no jogo, sem inventar atletas para preencher as lacunas.
+
+Notícias são geradas a partir de partidas importantes, resultados dos rivais, títulos, lesões, convocações e transferências. Marcelo Bechler e Fred Caldeira são personagens simulados para a cobertura esportiva; **Fabrizio Romano fica dedicado ao mercado de transferências**. Todos os textos/falas são fictícios, sem participação ou endosso dessas pessoas. Lesões podem afastar o atleta, com jogos perdidos simulados e salários acumulados no calendário; aposentadoria depende de idade, saúde e desempenho, e uma lesão grave pode encerrar a carreira.
+
+O ZIP de Windows inclui todos os arquivos e funciona offline. Com Edge instalado, abre em janela de aplicativo; caso contrário, usa o navegador padrão. O executável ainda usa a base WebGL do protótipo, não um motor nativo independente. O empacotamento e os arquivos foram testados em Linux e compilados para Windows x64; não houve teste em Windows físico. O APK antigo não foi atualizado nesta versão.
+
+Validação atual:
+
+```sh
+for test in training match match-input drag economy world career-saves vision-offside career-life international; do
+  node "tests/$test.test.cjs" || exit 1
+done
+python3 tools/build-web.py
+python3 tests/web-package.test.py
+# Com um servidor HTTP local na raiz do repositório:
+GAME_URL=http://127.0.0.1:8013/ node tests/career-hub-browser.test.cjs
+GAME_URL=http://127.0.0.1:8013/ node tests/international-browser.test.cjs
+GAME_URL=http://127.0.0.1:8013/ node tests/career-offline-browser.test.cjs
+python3 tools/build-desktop.py
+```
+
+Os testes de interface abaixo que descrevem seleção livre de fundamentos ou a janela obrigatória de chute pertencem às versões anteriores. Saves anteriores preservam dinheiro, histórico de treinos e estatísticas; os novos campos são criados ao carregar a carreira.
+
+---
+
 # Próxima Estrela
 
 ## Jogar pelo navegador do celular
