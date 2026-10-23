@@ -1,3 +1,9 @@
+# Visual e personalização — v0.11.0
+
+Crie o visual do jogador com prévia 3D giratória: pele, quatro opções de cabelo, camisa lisa ou listrada, cores da camisa, gola, shorts, meias e chuteiras, mangas longas/curtas e meias longas/curtas. O visual acompanha treinos, partidas e comemorações e pode ser editado em Meu jogador → Personalizar aparência e uniforme. As escolhas são cosméticas; os bônus das chuteiras da loja continuam separados.
+
+Modelos com rosto, gola, detalhes de uniforme e cadarços, gramado com cores ajustadas e detalhes de arquibancada e banco de reservas. Sem downloads de modelos ou texturas externas.
+
 # Carreira e estádio — v0.10.0
 
 A partida abre em uma tela exclusiva, com retorno à carreira ao final. O menu de preparação mantém confronto, identidade do jogador e intensidade. O overall combina as sete habilidades com pesos por posição e bônus da chuteira, sem depender da energia.

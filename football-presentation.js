@@ -15,7 +15,7 @@ class FootballPresentation{
   const texture=new THREE.CanvasTexture(canvas);texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.repeat.set(20,32);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=Math.min(8,this.view.renderer.capabilities.getMaxAnisotropy());
   this.box(88,.2,125,0,-.2,52.5,this.material('#34463e'));
   this.box(76,.06,113,0,-.06,52.5,this.material('#376745'));
-  for(let i=0;i<14;i++){const stripe=new THREE.Mesh(new THREE.PlaneGeometry(68,7.5),this.material(i%2?'#398151':'#34794b',{map:texture}));stripe.rotation.x=-Math.PI/2;stripe.position.set(0,.002,3.75+i*7.5);stripe.receiveShadow=true;this.scene.add(stripe);}
+  for(let i=0;i<14;i++){const stripe=new THREE.Mesh(new THREE.PlaneGeometry(68,7.5),this.material(i%2?'#4c895d':'#438154',{map:texture}));stripe.rotation.x=-Math.PI/2;stripe.position.set(0,.002,3.75+i*7.5);stripe.receiveShadow=true;this.scene.add(stripe);}
   const white=new THREE.MeshBasicMaterial({color:'#e8efdb'}),markings=[];
   const line=(x,z,a,b)=>{const length=Math.hypot(a-x,b-z);if(!length)return;const px=-(b-z)/length*.055,pz=(a-x)/length*.055,p1=[x+px,.018,z+pz],p2=[x-px,.018,z-pz],p3=[a+px,.018,b+pz],p4=[a-px,.018,b-pz];markings.push(...p1,...p3,...p2,...p2,...p3,...p4);};
 
@@ -35,6 +35,7 @@ class FootballPresentation{
   for(let tier=0;tier<7;tier++){const y=.55+tier*.8;for(const end of [-1,1])this.box(86,.65,1.6,0,y,end<0?-5-tier*1.6:110+tier*1.6,concrete);for(const side of [-1,1])this.box(1.6,.65,115,side*(38+tier*1.3),y,52.5,concrete);}
   for(const side of [-1,1]){this.box(10,.25,119,side*42,10.4,52.5,roof);for(const z of [-4,24,52.5,81,109])this.box(.16,10,.16,side*46,5,z,trim);}
   for(const z of [-12,117]){this.box(94,.25,9,0,10.4,z,roof);for(const x of [-42,-21,0,21,42])this.box(.16,10,.16,x,5,z+3,trim);}
+  for(const z of [-15,120]){this.box(98,2.2,.5,0,7.3,z,this.material('#243e4b'));for(let i=0;i<12;i++)this.box(4,.06,.12,-44+i*8,8.5,z+.35,this.material(i%2?'#e5d8a6':'#7bacb5'));}for(const x of [-36,36]){this.box(.1,.35,106,x,.25,52.5,this.material('#c8d2cb'));for(const z of [20,25]){this.box(1.8,.8,4,x, .5,z,this.material('#264858'));this.box(2,.12,4.2,x,1.4,z,this.material('#a5b9bd'));}}
   const brands=['PRÓXIMA ESTRELA','AURORA SPORTS','VIVAVOLT','O SEU FUTEBOL','NEXO MOBILE'];for(let i=0;i<brands.length;i++)this.sign(brands[i],13,1.1,-28+i*14,.75,-3);
   for(const side of [-1,1])for(let i=0;i<5;i++)this.sign(brands[i],20,1.1,side*35.5,.75,9+i*21,side>0?-Math.PI/2:Math.PI/2);
   this.scoreCanvas=document.createElement('canvas');this.scoreCanvas.width=512;this.scoreCanvas.height=128;this.scoreTexture=new THREE.CanvasTexture(this.scoreCanvas);this.scoreTexture.colorSpace=THREE.SRGBColorSpace;const board=new THREE.Mesh(new THREE.PlaneGeometry(12,3),new THREE.MeshBasicMaterial({map:this.scoreTexture}));board.position.set(0,7.8,-11);this.scene.add(board);this.setScore(this.view.training?'TREINO':'0 : 0');
@@ -65,13 +66,24 @@ class FootballPresentation{
   const panels=new THREE.BufferGeometry();panels.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));panels.setAttribute('normal',new THREE.Float32BufferAttribute(normals,3));const black=new THREE.Mesh(panels,this.material('#192731',{roughness:.48,side:THREE.DoubleSide}));ball.add(black);return ball;
  }
  makeActor(color,label){
-  const body=new THREE.Group(),shirt=this.material(color),skin=this.material('#d6a17b'),shorts=this.material('#17272e'),socks=this.material('#e5ede3'),boot=this.material('#24333a');
+  const body=new THREE.Group(),shirt=this.material(color),skin=this.material('#c58d68'),shorts=this.material('#172c48'),socks=this.material('#e8edf2'),boot=this.material('#24333a',{roughness:.5}),hair=this.material('#30241f'),trim=this.material('#f4f0dc');
   const mesh=(geometry,mat,parent,x,y,z)=>{const m=new THREE.Mesh(geometry,mat);m.position.set(x,y,z);m.castShadow=true;parent.add(m);return m;};
-  mesh(new THREE.CylinderGeometry(.22,.17,.62,12),shirt,body,0,1.12,0);mesh(new THREE.CylinderGeometry(.085,.09,.09,10),skin,body,0,1.47,0);mesh(new THREE.TorusGeometry(.09,.018,5,12),this.material('#e9eee8'),body,0,1.44,.05).rotation.x=Math.PI/2;mesh(new THREE.SphereGeometry(.16,12,10),skin,body,0,1.58,0);mesh(new THREE.SphereGeometry(.163,12,8,0,Math.PI*2,0,1.45),this.material('#30241f'),body,0,1.6,-.01);
-  const limbs=[];for(const side of [-1,1]){const leg=new THREE.Group();leg.position.set(side*.105,.86,0);mesh(new THREE.CylinderGeometry(.085,.07,.35,8),shorts,leg,0,-.16,0);mesh(new THREE.CylinderGeometry(.06,.05,.33,8),socks,leg,0,-.49,0);mesh(new THREE.BoxGeometry(.14,.1,.27),boot,leg,0,-.68,.05);body.add(leg);limbs.push(leg);}
-  for(const side of [-1,1]){const arm=new THREE.Group();arm.position.set(side*.23,1.3,0);mesh(new THREE.CylinderGeometry(.085,.07,.2,8),shirt,arm,0,-.08,0);mesh(new THREE.CylinderGeometry(.055,.045,.32,8),skin,arm,0,-.31,0);mesh(new THREE.SphereGeometry(.065,8,6),skin,arm,0,-.47,0);arm.rotation.z=side*.15;body.add(arm);limbs.push(arm);}
-  const shadow=this.groundShadow(.9);body.add(shadow);
-  body.userData={shirt,limbs,label:this.view.label(label),lastPoint:null};body.add(body.userData.label);return body;
+  mesh(new THREE.CylinderGeometry(.225,.18,.57,8),shirt,body,0,1.12,0).scale.z=.72;
+  mesh(new THREE.CylinderGeometry(.078,.085,.12,8),skin,body,0,1.46,0);
+  const collar=mesh(new THREE.TorusGeometry(.09,.018,5,12),trim,body,0,1.415,.025);collar.rotation.x=Math.PI/2;
+  const head=mesh(new THREE.SphereGeometry(.155,12,10),skin,body,0,1.61,0);head.scale.set(.9,1.1,.93);
+  mesh(new THREE.SphereGeometry(.028,6,5),skin,body,0,1.60,.145);
+  for(const side of [-1,1]){mesh(new THREE.SphereGeometry(.038,6,5),skin,body,side*.14,1.61,0);mesh(new THREE.SphereGeometry(.012,5,4),this.material('#17242a'),body,side*.052,1.635,.13);}
+  const hairMesh=mesh(new THREE.SphereGeometry(.16,12,8,0,Math.PI*2,0,1.6),hair,body,0,1.65,-.008);
+  const crest=mesh(new THREE.BoxGeometry(.075,.10,.23),hair,body,0,1.80,0);
+  const markings=new THREE.Group();body.add(markings);for(const side of [-1,1])for(let i=0;i<3;i++)mesh(new THREE.BoxGeometry(.038,.45,.012),trim,markings,(i-1)*.115,1.12,side*.169);
+  const hoops=new THREE.Group();body.add(hoops);for(let i=0;i<3;i++){const ring=mesh(new THREE.CylinderGeometry(.222-i*.006,.222-i*.006,.035,8,1,true),trim,hoops,0,1.28-i*.13,0);ring.scale.z=.735;}
+  const limbs=[],sockMeshes=[],sleeveMeshes=[];for(const side of [-1,1]){const leg=new THREE.Group();leg.position.set(side*.108,.86,0);mesh(new THREE.CylinderGeometry(.091,.08,.29,8),shorts,leg,0,-.13,0);mesh(new THREE.CylinderGeometry(.063,.052,.37,8),skin,leg,0,-.43,0);sockMeshes.push(mesh(new THREE.CylinderGeometry(.066,.055,.33,8),socks,leg,0,-.49,0));const shoe=mesh(new THREE.BoxGeometry(.145,.105,.28),boot,leg,0,-.68,.045);for(let i=0;i<3;i++)mesh(new THREE.BoxGeometry(.095,.008,.012),trim,shoe,0,.055,-.015+i*.035);body.add(leg);limbs.push(leg);}
+  for(const side of [-1,1]){const arm=new THREE.Group();arm.position.set(side*.24,1.32,0);mesh(new THREE.CylinderGeometry(.07,.05,.43,8),skin,arm,0,-.24,0);sleeveMeshes.push(mesh(new THREE.CylinderGeometry(.08,.065,.2,8),shirt,arm,0,-.08,0));mesh(new THREE.SphereGeometry(.058,8,6),skin,arm,0,-.47,0);arm.rotation.z=side*.15;body.add(arm);limbs.push(arm);}
+  body.add(this.groundShadow(.9));body.userData={shirt,skin,shorts,socks,boot,hair,trim,hairMesh,crest,markings,hoops,sockMeshes,sleeveMeshes,limbs,label:this.view.label(label),lastPoint:null};body.add(body.userData.label);return body;
+ }
+ styleActor(actor,value){
+  const a=normalizePlayerLook(value),data=actor.userData,key=JSON.stringify(a);if(data.lookKey===key)return;data.lookKey=key;for(const k of ['shirt','skin','shorts','socks','trim'])data[k].color.set(a[k]);data.boot.color.set(a.boots);data.hair.color.set(a.hairColor);data.hairMesh.visible=a.hair!=='bald';data.hairMesh.scale.set(1,a.hair==='crop'?.55:1,1);data.crest.visible=a.hair==='crest';data.markings.visible=a.pattern==='stripes';data.hoops.visible=a.pattern==='hoops';for(const m of data.sleeveMeshes){m.scale.y=a.sleeves==='long'?2.1:1;m.position.y=a.sleeves==='long'?-.19:-.08;}for(const m of data.sockMeshes){m.scale.y=a.sockLength==='short'?.42:1;m.position.y=a.sockLength==='short'?-.58:-.49;}
  }
  animateActor(actor,point){const data=actor.userData,previous=data.lastPoint,moving=previous?Math.hypot(point.x-previous.x,point.y-previous.y):0,time=performance.now()/1000;
   if(moving>.02){actor.rotation.y=Math.atan2(point.x-previous.x,-(point.y-previous.y));data.walkUntil=time+.15;}else actor.rotation.y=0;
