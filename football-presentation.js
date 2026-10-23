@@ -99,7 +99,8 @@ class FootballPresentation{
   if(v.net){if(outcome?.goal&&this.goalOutcome!==outcome){this.goalOutcome=outcome;this.goalAt=now;}const age=(now-(this.goalAt||0))/1000,pulse=outcome?.goal&&age<1?Math.sin(age*18)*Math.exp(-age*4)*.22:0,vertices=v.net.geometry.attributes.position;for(let i=0;i<vertices.count;i++){const z=v.netBase[i*3+2];vertices.array[i*3+2]=z+pulse*(z<-.1?1:.1);}vertices.needsUpdate=true;}
 
  }
- animateStrike(actor,flight){if(!flight)return;const u=Math.min(1,flight.elapsed/.35);actor.userData.limbs[1].rotation.x=-Math.sin(u*Math.PI)*1.3;actor.userData.limbs[2].rotation.x=Math.sin(u*Math.PI)*.5;}
+ animateReceive(actor,flight){if(!flight)return;const reach=flight.receivingReach||0,t=Math.min(1,flight.elapsed/flight.duration);actor.userData.limbs[0].rotation.x=-reach*.65*t;actor.userData.limbs[2].rotation.z=-.2-reach*.55;actor.userData.limbs[3].rotation.z=.2+reach*.55;actor.rotation.z=Math.sin(performance.now()/150)*Math.min(.10,(flight.receiverTravel||0)/500);}
+ animateStrike(actor,flight){if(!flight)return;if(flight.kickDelay>0){const run=1-flight.kickDelay/.3;actor.position.z+=flight.kickDelay*2;actor.userData.limbs[0].rotation.x=Math.sin(run*Math.PI*2)*.5;actor.userData.limbs[1].rotation.x=-.65*run;actor.userData.limbs[2].rotation.x=.4*run;return;}const u=Math.min(1,flight.elapsed/.35);actor.userData.limbs[1].rotation.x=-Math.sin(u*Math.PI)*1.3;actor.userData.limbs[2].rotation.x=Math.sin(u*Math.PI)*.5;}
  animateKeeper(actor,flight){if(!flight)return;const progress=Math.min(1,flight.elapsed/flight.duration),dive=Math.max(0,(progress-.2)/.8),target=this.view.point(flight.end,true),direction=Math.sign(target.x-actor.position.x)||1;actor.position.x+=direction*dive*.8;actor.position.y=Math.sin(dive*Math.PI)*.35;actor.rotation.z=-direction*dive*.85;actor.userData.limbs[2].rotation.z=-1.5;actor.userData.limbs[3].rotation.z=1.5;}
 }
 function setupFootballVisualControls(){

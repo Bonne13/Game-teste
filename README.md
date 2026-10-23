@@ -1,3 +1,9 @@
+# Treino com preparação pausada — v0.12.0
+
+No treino de chute, passe, visão e falta: arraste no campo para mirar e definir a força, solte para abrir a bola 3D com o treino pausado, toque na bola para selecionar altura/curva e confirme a execução. Voltar à mira não consome tentativa; tocar na bola não dispara a jogada. Os controles da partida mantêm seu fluxo de arrasto livre.
+
+A execução inclui aproximação e movimento de chute antes de a bola sair. Recebedores de passes correm em direção ao destino com alcance limitado, movimentam braços e perna para dominar; passes muito distantes continuam errando e o impedimento considera a posição no momento do passe.
+
 # Visual e personalização — v0.11.0
 
 Crie o visual do jogador com prévia 3D giratória: pele, quatro opções de cabelo, camisa lisa ou listrada, cores da camisa, gola, shorts, meias e chuteiras, mangas longas/curtas e meias longas/curtas. O visual acompanha treinos, partidas e comemorações e pode ser editado em Meu jogador → Personalizar aparência e uniforme. As escolhas são cosméticas; os bônus das chuteiras da loja continuam separados.
